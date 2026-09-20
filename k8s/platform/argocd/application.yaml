@@ -44,7 +44,9 @@ spec:
   destination:
     server: https://kubernetes.default.svc
     namespace: resume
-  # Enable automation after the first manual sync and Gateway verification.
   syncPolicy:
+    automated:
+      prune: true
+      selfHeal: true
     syncOptions:
       - CreateNamespace=true
