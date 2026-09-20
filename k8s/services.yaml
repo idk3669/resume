@@ -1,0 +1,23 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: resume-web
+spec:
+  type: ClusterIP
+  selector: {app: resume-web}
+  ports:
+    - name: http
+      port: 8080
+      targetPort: http
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: resume-api
+spec:
+  type: ClusterIP
+  selector: {app: resume-api}
+  ports:
+    - name: http
+      port: 8000
+      targetPort: http

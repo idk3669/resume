@@ -1,0 +1,21 @@
+apiVersion: kustomize.config.k8s.io/v1beta1
+kind: Kustomization
+namespace: resume
+resources:
+- namespace.yaml
+- rbac.yaml
+- workloads.yaml
+- services.yaml
+- policies.yaml
+- pdb.yaml
+configMapGenerator:
+- name: resume-data
+  files:
+  - resume.json
+images:
+- name: resume-web
+  newName: ghcr.io/idk3669/resume-web
+  digest: sha256:6c8d0888b97df46440d02ecd2a89071f694c3e066c4844d95447824d07bc16a9
+- name: resume-api
+  newName: ghcr.io/idk3669/resume-api
+  digest: sha256:85000582b6015172443d3cd0276cadd80b45c1574b0bfb60dd526617fbaf96a0

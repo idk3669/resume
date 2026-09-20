@@ -1,0 +1,49 @@
+{
+  "profile": {
+    "name": "김진현",
+    "englishName": "JINHYUN KIM",
+    "role": "Cloud Engineer",
+    "headline": "안정적인 서비스의 기반을 만듭니다.",
+    "intro": "금융권 프라이빗 클라우드에서 PaaS 플랫폼을 구축하고 운영했습니다. 로그와 지표로 문제의 원인을 좁히고, 반복되는 운영 작업을 자동화합니다.",
+    "email": "jhk8827@gmail.com",
+    "experience": "4년 8개월",
+    "employmentStart": "2021-09-06",
+    "employmentEnd": "2026-05-15",
+    "focus": "Tanzu · PaaS · Platform Operations",
+    "growth": "Kubernetes와 GitOps로 클라우드 네이티브 역량을 확장하고 있습니다."
+  },
+  "highlights": [
+    {"value": "10,000+", "unit": "TPS", "label": "마케팅허브 부하 테스트", "detail": "L7 → L4 전환 테스트에서 처리량 개선", "projectId": "marketing-performance"},
+    {"value": "50–60%", "unit": "CPU", "label": "Log Cache 사용률 안정화", "detail": "90% 이상 사용률에서 튜닝 후 안정화", "projectId": "log-cache"},
+    {"value": "8", "unit": "scenarios", "label": "GemFire 가용성 검증", "detail": "Locator·Server 장애 시나리오 테스트", "projectId": "gemfire-ha"}
+  ],
+  "skills": [
+    {"title": "플랫폼 구축·운영", "description": "금융권 프라이빗 클라우드와 서비스 실행 환경", "items": ["VMware Tanzu / TAS", "BOSH", "Cloud Foundry", "vSphere", "AWS"]},
+    {"title": "장애 분석·성능 개선", "description": "지표, 로그, 패킷을 연결하는 원인 분석", "items": ["Prometheus", "Grafana", "ELK", "RabbitMQ", "GemFire"]},
+    {"title": "자동화·운영 표준화", "description": "반복 점검과 배포 절차의 개선", "items": ["Shell", "CI/CD 연계", "인증서 관리", "HA / DR", "운영 문서화"]},
+    {"title": "클라우드 네이티브", "description": "자격 취득과 실습을 바탕으로 확장하는 영역", "items": ["Kubernetes", "CKA 취득", "GitOps 학습"]}
+  ],
+  "career": [
+    {"company": "데이타솔루션", "position": "클라우드 엔지니어 · 선임", "period": "2021.09.06 — 2026.05.15", "description": "NH농협은행·중앙회 PaaS 플랫폼 운영 및 NH카드 디지털 플랫폼 구축", "bullets": ["개발·운영·DR·AWS 환경의 서비스 배포, 장애 대응 및 로그 기반 원인 분석", "BOSH 기반 인증서 교체, 보안 패치·업그레이드 및 일일 점검 자동화", "클라우드 포털·ELK·CI/CD 연계와 사용자 계정·권한 관리", "성능 분석, 리소스 최적화, 운영 가이드 작성 및 내부 기술 세미나 발표"]}
+  ],
+  "education": [
+    {"name": "성균관대학교 정보통신대학원", "detail": "빅데이터학과 · 2026.09 입학, 재학 중"},
+    {"name": "학점은행제", "detail": "정보보호학 전공 · 2021.02 졸업"},
+    {"name": "서울호서 전문학교", "detail": "사이버해킹보안과 · 2021.02 졸업"}
+  ],
+  "certifications": [
+    {"name": "Certified Kubernetes Administrator", "detail": "CKA · 2024.01 취득"},
+    {"name": "VMware Certified Professional", "detail": "Application Modernization · 2023.04 취득"},
+    {"name": "네트워크관리사 2급", "detail": "한국정보통신자격협회 · 2015.07 취득"}
+  ],
+  "projects": [
+    {"id": "nh-card", "category": "플랫폼 구축", "title": "NH카드 통합 디지털 플랫폼", "subtitle": "서비스 경계를 분리하고 운영 기준을 세운 PaaS 구축", "period": "2024.01 — 2024.11", "tags": ["TAS", "BOSH", "Isolation Segment", "GemFire"], "result": "멀티 AZ · 서비스 격리", "context": "NH카드 차세대 디지털 서비스를 위한 전용 PaaS 환경과 개발·검증·운영·DR 구성이 필요했습니다.", "analysis": "카드 서비스의 가용성 요구와 다른 서비스로부터의 자원·장애 격리를 고려해 전용 클러스터, AZ, Org·Space 구성을 설계했습니다.", "actions": ["BOSH 기반 멀티 AZ 배포와 Isolation Segment 설계·검증", "환경별 Org·Space와 리소스 할당 구성", "GemFire 리전 구성, 컨테이너 성능·오토스케일 테스트", "개발자 앱 배포 교육 및 사용자·운영자 가이드 작성"], "outcome": "카드 서비스 전용 실행 환경과 배포·운영 절차를 정립했습니다. 서비스 경계를 분리하고 복구 절차를 문서화했습니다."},
+    {"id": "marketing-performance", "category": "성능 개선", "title": "마케팅허브 병목 구간 분석", "subtitle": "부하 테스트로 로드밸런서와 애플리케이션 구간을 분리", "period": "금융권 PaaS 운영 사례", "tags": ["Gorouter", "NSX-T", "Nginx", "부하 테스트"], "result": "5,000 → 10,000+ TPS", "context": "마케팅허브 오픈 이후 응답 지연이 발생해 긴급 대응과 후속 성능 검증이 필요했습니다.", "analysis": "IaaS·PaaS·컨테이너 지표를 대조하고 동일한 GET 요청 시나리오로 로드밸런서 유형별 성능을 비교했습니다.", "actions": ["DR 환경에서 요청 시나리오 재현 및 컴포넌트별 지표 분석", "L7과 L4 로드밸런서의 처리량·지연 비교", "Gorouter·앱 수량을 변경하며 자원 사용률과 지연 측정", "테스트 결과를 바탕으로 운영 컴포넌트 대수 재조정"], "outcome": "포트폴리오의 테스트 조건에서 L7은 약 5,000 TPS 구간부터 지연이 발생했고, L4는 10,000 TPS를 넘어서도 지연 없이 처리했습니다. 최적 구성으로 Gorouter 6대·웹 앱 4대를 도출했습니다."},
+    {"id": "rabbitmq", "category": "장애 분석", "title": "RabbitMQ Network Partitioning", "subtitle": "애플리케이션 증상에서 가상 네트워크 계층까지 추적", "period": "금융권 PaaS 운영 사례", "tags": ["RabbitMQ", "NSX DFW", "TCP", "패킷 분석"], "result": "네트워크 계층 원인 규명", "context": "3노드 RabbitMQ 클러스터에서 노드 간 통신이 끊기며 거래 로그 처리와 서비스 응답이 지연됐습니다.", "analysis": "Heartbeat 누락 시점의 TCP 재전송과 DVFilter 드롭을 연계해 분석했습니다. 포트폴리오에서는 NSX TCP Sequence 처리 결함과의 연관성을 확인했습니다.", "actions": ["노드 간 통신과 Heartbeat 누락 구간 확인", "TCP 재전송·Sequence와 방화벽 드롭 카운터 비교", "제품 알려진 이슈와 현상 대조", "NSX 업그레이드 및 방화벽 예외처리 해결안 제시"], "outcome": "RabbitMQ 자체 증상을 넘어 NSX DFW의 TCP 흐름 드롭을 원인으로 좁혔고, 인프라 계층의 개선 방안을 제시했습니다."},
+    {"id": "log-cache", "category": "성능 개선", "title": "Log Cache 리소스 최적화", "subtitle": "실측 트래픽을 근거로 과도한 캐시 설정 재조정", "period": "금융권 PaaS 운영 사례", "tags": ["Grafana", "ELK", "Log Cache", "Loggregator"], "result": "CPU 90%+ → 50–60%", "context": "로그 유실과 Log Cache CPU 임계값 초과가 지속돼 로그 파이프라인과 자원 할당 점검이 필요했습니다.", "analysis": "이전 오토스케일 대응 중 과도하게 설정한 max_per_source를 확인하고, 3개월간의 지표·트래픽 패턴을 대조했습니다.", "actions": ["Grafana 자원 추이와 ELK 로그 교차 분석", "요청량·메트릭 발생량·보관 시간을 기반으로 캐시 설정 재산정", "Beat·Traffic Controller 등 병목 구간을 단계적으로 조정", "조정 전후 CPU와 로그 유실 여부 확인"], "outcome": "포트폴리오 기준 Log Cache CPU 사용률을 90% 이상에서 50~60%대로 안정화하고 로그 처리 안정성을 개선했습니다."},
+    {"id": "cf-push", "category": "장애 분석", "title": "CF Push 배포 흐름 상세 분석", "subtitle": "46개 단계로 나누어 배포 지연의 개선 지점 탐색", "period": "금융권 PaaS 운영 사례", "tags": ["Cloud Foundry", "TAS", "CCDB", "Trace Log"], "result": "46단계 · 앱 3종 분석", "context": "cf push 소요시간의 병목 여부와 인프라 증설 필요성을 판단해야 했습니다.", "analysis": "Upload·Staging·Startup을 총 46개 단계로 세분화하고 3종 앱의 크기·바인딩 차이에 따른 소요시간을 비교했습니다.", "actions": ["cf trace, VM 로그, CCDB Jobs 정보를 기반으로 시간 측정", "단계별 API 호출과 자원 사용률 연계 분석", "Staging·Startup 지연과 앱 특성 비교"], "outcome": "테스트 범위에서 VM 자원 병목이 관찰되지 않아 단순 증설의 근거가 부족함을 확인했습니다. 앱 구조와 초기 기동시간을 개선 지점으로 도출했습니다."},
+    {"id": "gemfire-ha", "category": "가용성 검증", "title": "GemFire 멀티센터 HA 테스트", "subtitle": "장애 시나리오로 검증하는 세션 가용성", "period": "금융권 PaaS 운영 사례", "tags": ["GemFire", "WAN Gateway", "Locator", "HA"], "result": "8개 장애 시나리오 검증", "context": "멀티센터 환경에서 GemFire 세션과 복제 구성의 가용성을 확인해야 했습니다.", "analysis": "Locator와 Server 장애를 나누어 테스트하고 세션·복제 동작을 확인했습니다.", "actions": ["멀티센터 GemFire 및 WAN Gateway 구성 검토", "Locator·Server 강제 종료를 포함한 8개 장애 시나리오 검증", "테스트 결과를 바탕으로 Replica 구성 가이드 정리"], "outcome": "장애 시 동작을 검증하고 Replica 구성 가이드라인을 수립했습니다."},
+    {"id": "routing", "category": "플랫폼 구축", "title": "TAS 라우팅 자동화 개선", "subtitle": "재기동 이후에도 유지되는 네트워크 구성", "period": "금융권 PaaS 운영 사례", "tags": ["BOSH Release", "Monit", "AWS CLI", "Network"], "result": "라우팅 유실·Gateway 중복 개선", "context": "DHCP 의존 구성에서 재기동 후 라우팅 유실과 Gateway 중복 문제가 발생했습니다.", "analysis": "IP 할당과 라우팅 설정의 생명주기를 확인하고 재기동 후에도 설정이 일관되도록 개선했습니다.", "actions": ["Static IP 기반 구성으로 전환", "BOSH custom release와 Monit 기반 자동화 구성 개선", "재기동 상황에서 라우팅 유지 여부 확인"], "outcome": "재기동에 따른 라우팅 유실과 Gateway 중복 문제를 개선했습니다."},
+    {"id": "allone", "category": "가용성 검증", "title": "올원뱅크 가용성·성능 테스트", "subtitle": "오토스케일 지연과 세션 처리 병목 분석", "period": "금융권 PaaS 운영 사례", "tags": ["Autoscaler", "GemFire", "Log Cache", "Thread Dump"], "result": "1,600 TPS 이상 테스트 안정화", "context": "부하 증가 시 오토스케일이 지연되고 GemFire 세션 처리에서 응답 지연이 발생했습니다.", "analysis": "로그 수집 지연과 메트릭 경로를 점검하고 Thread dump로 GemFire registerInterest 구간의 경합을 확인했습니다.", "actions": ["로그 수집 파이프라인 용량 및 메트릭 수집 간격 조정", "GemFire Subscription 설정의 필요성과 경합 분석", "불필요한 Subscription을 해제한 후 부하 테스트 재수행"], "outcome": "포트폴리오의 테스트 조건에서 Subscription 조정 후 1,600 TPS 이상의 부하에서도 해당 스레드 경합과 지연이 나타나지 않았습니다. 초기 캐시 과다 설정은 이후 Log Cache 최적화에서 재조정했습니다."}
+  ]
+}
