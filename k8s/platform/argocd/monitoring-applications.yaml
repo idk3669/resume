@@ -13,6 +13,9 @@ spec:
       namespace: local-path-storage
     - server: https://kubernetes.default.svc
       namespace: monitoring
+    # The chart creates discovery Services for CoreDNS and kube-proxy here.
+    - server: https://kubernetes.default.svc
+      namespace: kube-system
   # The provisioner and Prometheus Operator create storage, RBAC and CRD resources.
   clusterResourceWhitelist:
     - group: '*'
