@@ -54,6 +54,7 @@ class ProjectSection(StrictModel):
     title: str
     lines: list[str]
     images: list[ProjectImage] = Field(default_factory=list)
+    imageFirst: bool = False
 
 class Project(StrictModel):
     id: str = Field(pattern=r'^[a-z0-9-]+$')

@@ -24,7 +24,7 @@ class ApiTests(unittest.TestCase):
             self.assertEqual(sum(p['collection'] == 'portfolio' for p in projects), 7)
             self.assertEqual(resume['highlights'], [])
             cf = next(p for p in projects if p['id'] == 'cf-push')
-            self.assertEqual(len(cf['sections']), 18)
+            self.assertEqual(len(cf['sections']), 22)
             figures = [image for section in cf['sections'] for image in section['images']]
             self.assertEqual(len(figures), 12)
             for image in figures:

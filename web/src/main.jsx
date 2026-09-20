@@ -14,6 +14,10 @@ function InlineText({text}) {
     part.startsWith('`') ? <code key={i}>{part.slice(1, -1)}</code> : part);
 }
 
+function SectionImages({images = []}) {
+  return images.map(image => <figure className="detail-figure" key={image.src}><a href={image.src} target="_blank" rel="noopener noreferrer" aria-label={`${image.alt} 원본 이미지 새 탭에서 보기`}><img src={image.src} alt={image.alt} loading="lazy"/></a><figcaption>{image.caption}<span>이미지를 누르면 원본 크기로 볼 수 있습니다 ↗</span></figcaption></figure>);
+}
+
 function DetailSection({section, anchor}) {
   const blocks = [];
   for (const line of section.lines) {
@@ -30,9 +34,9 @@ function DetailSection({section, anchor}) {
       groups.at(-1).push(block);
     } else groups.push(block);
   }
-  return <section id={anchor} className="project-detail-section"><h3>{section.title}</h3>{groups.map((group, i) => Array.isArray(group)
+  return <section id={anchor} className="project-detail-section"><h3>{section.title}</h3>{section.imageFirst && <SectionImages images={section.images}/>} {groups.map((group, i) => Array.isArray(group)
     ? <ul className="detail-list" key={i}>{group.map((item, j) => <li key={j}><strong><InlineText text={item.text}/></strong>{item.items.length > 0 && <ul>{item.items.map((text, k) => <li key={k}><InlineText text={text}/></li>)}</ul>}</li>)}</ul>
-    : <p key={i}><InlineText text={group.text}/></p>)}{section.images?.map(image => <figure className="detail-figure" key={image.src}><a href={image.src} target="_blank" rel="noopener noreferrer" aria-label={`${image.alt} 원본 이미지 새 탭에서 보기`}><img src={image.src} alt={image.alt} loading="lazy"/></a><figcaption>{image.caption}<span>이미지를 누르면 원본 크기로 볼 수 있습니다 ↗</span></figcaption></figure>)}</section>;
+    : <p key={i}><InlineText text={group.text}/></p>)}{!section.imageFirst && <SectionImages images={section.images}/>}</section>;
 }
 
 function ProjectDialog({id, onClose}) {
