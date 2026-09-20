@@ -8,6 +8,33 @@ async function getJSON(path, signal) {
   return response.json();
 }
 
+function InlineText({text}) {
+  return text.split(/(\*\*.*?\*\*|`[^`]+`)/g).map((part, i) =>
+    part.startsWith('**') ? <strong key={i}>{part.slice(2, -2)}</strong> :
+    part.startsWith('`') ? <code key={i}>{part.slice(1, -1)}</code> : part);
+}
+
+function DetailSection({section}) {
+  const blocks = [];
+  for (const line of section.lines) {
+    const bullet = line.match(/^(\s*)- (.*)$/);
+    if (!bullet) { blocks.push({text: line}); continue; }
+    const last = blocks.at(-1);
+    if (bullet[1].length && last?.items) last.items.push(bullet[2]);
+    else blocks.push({text: bullet[2], items: []});
+  }
+  const groups = [];
+  for (const block of blocks) {
+    if (block.items) {
+      if (!Array.isArray(groups.at(-1))) groups.push([]);
+      groups.at(-1).push(block);
+    } else groups.push(block);
+  }
+  return <section className="project-detail-section"><h3>{section.title}</h3>{groups.map((group, i) => Array.isArray(group)
+    ? <ul className="detail-list" key={i}>{group.map((item, j) => <li key={j}><strong><InlineText text={item.text}/></strong>{item.items.length > 0 && <ul>{item.items.map((text, k) => <li key={k}><InlineText text={text}/></li>)}</ul>}</li>)}</ul>
+    : <p key={i}><InlineText text={group.text}/></p>)}</section>;
+}
+
 function ProjectDialog({id, onClose}) {
   const dialog = useRef(null);
   const [project, setProject] = useState(null);
@@ -33,12 +60,17 @@ function ProjectDialog({id, onClose}) {
         <p className="eyebrow">CASE STUDY / {project.category}</p>
         <h2 id="detail-title">{project.title}</h2>
         <p className="muted">{project.period}</p>
+        {project.client && <dl className="project-meta"><div><dt>고객사</dt><dd>{project.client}</dd></div><div><dt>수행사</dt><dd>{project.contractor}</dd></div><div><dt>역할</dt><dd>{project.role}</dd></div></dl>}
+        <h3 className="stack-label">사용 기술 스택</h3>
         <div className="tags">{project.tags.map(tag => <span key={tag}>{tag}</span>)}</div>
         <p className="result-banner">{project.result}</p>
+        {project.sections?.length ? project.sections.map((section, i) => <DetailSection key={i} section={section}/>) : <>
         <section><h3>01 · 상황</h3><p>{project.context}</p></section>
         <section><h3>02 · 분석</h3><p>{project.analysis}</p></section>
         <section><h3>03 · 조치</h3><ul>{project.actions.map(action => <li key={action}>{action}</li>)}</ul></section>
         <section><h3>04 · 결과</h3><p>{project.outcome}</p></section>
+        </>}
+        <button className="button detail-done" onClick={onClose}>목록으로 돌아가기</button>
       </>}
     </div>
   </dialog>;

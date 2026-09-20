@@ -19,7 +19,12 @@ class ApiTests(unittest.TestCase):
             self.assertEqual(resume['profile']['employmentEnd'], '2026-05-15')
             self.assertNotIn('projects', resume)
             projects = client.get('/api/projects').json()
-            self.assertEqual(len(projects), 8)
+            self.assertEqual(len(projects), 15)
+            maintenance = next(p for p in projects if p['id'] == 'nh-maintenance')
+            self.assertEqual(maintenance['client'], 'NH농협은행 / 농협중앙회')
+            self.assertIn('NH 내부 세미나 발표 3회 진행', str(maintenance['sections']))
+            card = next(p for p in projects if p['id'] == 'nh-card')
+            self.assertIn('본인 기여도', [s['title'] for s in card['sections']])
             for project in projects:
                 self.assertEqual(client.get('/api/projects/' + project['id']).json(), project)
             self.assertEqual(client.get('/api/projects/missing').status_code, 404)

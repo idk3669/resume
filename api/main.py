@@ -45,6 +45,10 @@ class Credential(StrictModel):
     name: str
     detail: str
 
+class ProjectSection(StrictModel):
+    title: str
+    lines: list[str]
+
 class Project(StrictModel):
     id: str = Field(pattern=r'^[a-z0-9-]+$')
     category: str
@@ -57,6 +61,10 @@ class Project(StrictModel):
     analysis: str
     actions: list[str]
     outcome: str
+    client: str = ''
+    contractor: str = ''
+    role: str = ''
+    sections: list[ProjectSection] = Field(default_factory=list)
 
 class Resume(StrictModel):
     profile: Profile
