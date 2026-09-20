@@ -3,7 +3,7 @@
     "name": "김진현",
     "englishName": "JINHYUN KIM",
     "role": "Cloud Engineer",
-    "headline": "#안정적인 서비스의 기반을 만듭니다.",
+    "headline": "안정적인 서비스의 기반을 만듭니다.",
     "intro": "금융권 프라이빗 클라우드에서 PaaS 플랫폼을 구축하고 운영했습니다. 로그와 지표로 문제의 원인을 좁히고, 반복되는 운영 작업을 자동화합니다.",
     "email": "jhk8827@gmail.com",
     "experience": "4년 8개월",
@@ -13,37 +13,897 @@
     "growth": "Kubernetes와 GitOps로 클라우드 네이티브 역량을 확장하고 있습니다."
   },
   "highlights": [
-    {"value": "10,000+", "unit": "TPS", "label": "마케팅허브 부하 테스트", "detail": "L7 → L4 전환 테스트에서 처리량 개선", "projectId": "marketing-performance"},
-    {"value": "50–60%", "unit": "CPU", "label": "Log Cache 사용률 안정화", "detail": "90% 이상 사용률에서 튜닝 후 안정화", "projectId": "log-cache"},
-    {"value": "8", "unit": "scenarios", "label": "GemFire 가용성 검증", "detail": "Locator·Server 장애 시나리오 테스트", "projectId": "gemfire-ha"}
+    {
+      "value": "10,000+",
+      "unit": "TPS",
+      "label": "마케팅허브 부하 테스트",
+      "detail": "L7 → L4 전환 테스트에서 처리량 개선",
+      "projectId": "marketing-performance"
+    },
+    {
+      "value": "50–60%",
+      "unit": "CPU",
+      "label": "Log Cache 사용률 안정화",
+      "detail": "90% 이상 사용률에서 튜닝 후 안정화",
+      "projectId": "log-cache"
+    },
+    {
+      "value": "8",
+      "unit": "scenarios",
+      "label": "GemFire 가용성 검증",
+      "detail": "Locator·Server 장애 시나리오 테스트",
+      "projectId": "gemfire-ha"
+    }
   ],
   "skills": [
-    {"title": "플랫폼 구축·운영", "description": "금융권 프라이빗 클라우드와 서비스 실행 환경", "items": ["VMware Tanzu / TAS", "BOSH", "Cloud Foundry", "vSphere", "AWS"]},
-    {"title": "장애 분석·성능 개선", "description": "지표, 로그, 패킷을 연결하는 원인 분석", "items": ["Prometheus", "Grafana", "ELK", "RabbitMQ", "GemFire"]},
-    {"title": "자동화·운영 표준화", "description": "반복 점검과 배포 절차의 개선", "items": ["Shell", "CI/CD 연계", "인증서 관리", "HA / DR", "운영 문서화"]},
-    {"title": "클라우드 네이티브", "description": "자격 취득과 실습을 바탕으로 확장하는 영역", "items": ["Kubernetes", "CKA 취득", "GitOps 학습"]}
+    {
+      "title": "플랫폼 구축·운영",
+      "description": "금융권 프라이빗 클라우드와 서비스 실행 환경",
+      "items": [
+        "VMware Tanzu / TAS",
+        "BOSH",
+        "Cloud Foundry",
+        "vSphere",
+        "AWS"
+      ]
+    },
+    {
+      "title": "장애 분석·성능 개선",
+      "description": "지표, 로그, 패킷을 연결하는 원인 분석",
+      "items": [
+        "Prometheus",
+        "Grafana",
+        "ELK",
+        "RabbitMQ",
+        "GemFire"
+      ]
+    },
+    {
+      "title": "자동화·운영 표준화",
+      "description": "반복 점검과 배포 절차의 개선",
+      "items": [
+        "Shell",
+        "CI/CD 연계",
+        "인증서 관리",
+        "HA / DR",
+        "운영 문서화"
+      ]
+    },
+    {
+      "title": "클라우드 네이티브",
+      "description": "자격 취득과 실습을 바탕으로 확장하는 영역",
+      "items": [
+        "Kubernetes",
+        "CKA 취득",
+        "GitOps 학습"
+      ]
+    }
   ],
   "career": [
-    {"company": "데이타솔루션", "position": "클라우드 엔지니어 · 선임", "period": "2021.09.06 — 2026.05.15", "description": "NH농협은행·중앙회 PaaS 플랫폼 운영 및 NH카드 디지털 플랫폼 구축", "bullets": ["개발·운영·DR·AWS 환경의 서비스 배포, 장애 대응 및 로그 기반 원인 분석", "BOSH 기반 인증서 교체, 보안 패치·업그레이드 및 일일 점검 자동화", "클라우드 포털·ELK·CI/CD 연계와 사용자 계정·권한 관리", "성능 분석, 리소스 최적화, 운영 가이드 작성 및 내부 기술 세미나 발표"]}
+    {
+      "company": "데이타솔루션",
+      "position": "클라우드 엔지니어 · 선임",
+      "period": "2021.09.06 — 2026.05.15",
+      "description": "NH농협은행·중앙회 PaaS 플랫폼 운영 및 NH카드 디지털 플랫폼 구축",
+      "bullets": [
+        "개발·운영·DR·AWS 환경의 서비스 배포, 장애 대응 및 로그 기반 원인 분석",
+        "BOSH 기반 인증서 교체, 보안 패치·업그레이드 및 일일 점검 자동화",
+        "클라우드 포털·ELK·CI/CD 연계와 사용자 계정·권한 관리",
+        "성능 분석, 리소스 최적화, 운영 가이드 작성 및 내부 기술 세미나 발표"
+      ]
+    }
   ],
   "education": [
-    {"name": "성균관대학교 정보통신대학원", "detail": "빅데이터학과 · 2026.09 입학, 재학 중"},
-    {"name": "학점은행제", "detail": "정보보호학 전공 · 2021.02 졸업"},
-    {"name": "서울호서 전문학교", "detail": "사이버해킹보안과 · 2021.02 졸업"}
+    {
+      "name": "성균관대학교 정보통신대학원",
+      "detail": "빅데이터학과 · 2026.09 입학, 재학 중"
+    },
+    {
+      "name": "학점은행제",
+      "detail": "정보보호학 전공 · 2021.02 졸업"
+    },
+    {
+      "name": "서울호서 전문학교",
+      "detail": "사이버해킹보안과 · 2021.02 졸업"
+    }
   ],
   "certifications": [
-    {"name": "Certified Kubernetes Administrator", "detail": "CKA · 2024.01 취득"},
-    {"name": "VMware Certified Professional", "detail": "Application Modernization · 2023.04 취득"},
-    {"name": "네트워크관리사 2급", "detail": "한국정보통신자격협회 · 2015.07 취득"}
+    {
+      "name": "Certified Kubernetes Administrator",
+      "detail": "CKA · 2024.01 취득"
+    },
+    {
+      "name": "VMware Certified Professional",
+      "detail": "Application Modernization · 2023.04 취득"
+    },
+    {
+      "name": "네트워크관리사 2급",
+      "detail": "한국정보통신자격협회 · 2015.07 취득"
+    }
   ],
   "projects": [
-    {"id": "nh-card", "category": "플랫폼 구축", "title": "NH카드 통합 디지털 플랫폼", "subtitle": "서비스 경계를 분리하고 운영 기준을 세운 PaaS 구축", "period": "2024.01 — 2024.11", "tags": ["TAS", "BOSH", "Isolation Segment", "GemFire"], "result": "멀티 AZ · 서비스 격리", "context": "NH카드 차세대 디지털 서비스를 위한 전용 PaaS 환경과 개발·검증·운영·DR 구성이 필요했습니다.", "analysis": "카드 서비스의 가용성 요구와 다른 서비스로부터의 자원·장애 격리를 고려해 전용 클러스터, AZ, Org·Space 구성을 설계했습니다.", "actions": ["BOSH 기반 멀티 AZ 배포와 Isolation Segment 설계·검증", "환경별 Org·Space와 리소스 할당 구성", "GemFire 리전 구성, 컨테이너 성능·오토스케일 테스트", "개발자 앱 배포 교육 및 사용자·운영자 가이드 작성"], "outcome": "카드 서비스 전용 실행 환경과 배포·운영 절차를 정립했습니다. 서비스 경계를 분리하고 복구 절차를 문서화했습니다."},
-    {"id": "marketing-performance", "category": "성능 개선", "title": "마케팅허브 병목 구간 분석", "subtitle": "부하 테스트로 로드밸런서와 애플리케이션 구간을 분리", "period": "금융권 PaaS 운영 사례", "tags": ["Gorouter", "NSX-T", "Nginx", "부하 테스트"], "result": "5,000 → 10,000+ TPS", "context": "마케팅허브 오픈 이후 응답 지연이 발생해 긴급 대응과 후속 성능 검증이 필요했습니다.", "analysis": "IaaS·PaaS·컨테이너 지표를 대조하고 동일한 GET 요청 시나리오로 로드밸런서 유형별 성능을 비교했습니다.", "actions": ["DR 환경에서 요청 시나리오 재현 및 컴포넌트별 지표 분석", "L7과 L4 로드밸런서의 처리량·지연 비교", "Gorouter·앱 수량을 변경하며 자원 사용률과 지연 측정", "테스트 결과를 바탕으로 운영 컴포넌트 대수 재조정"], "outcome": "포트폴리오의 테스트 조건에서 L7은 약 5,000 TPS 구간부터 지연이 발생했고, L4는 10,000 TPS를 넘어서도 지연 없이 처리했습니다. 최적 구성으로 Gorouter 6대·웹 앱 4대를 도출했습니다."},
-    {"id": "rabbitmq", "category": "장애 분석", "title": "RabbitMQ Network Partitioning", "subtitle": "애플리케이션 증상에서 가상 네트워크 계층까지 추적", "period": "금융권 PaaS 운영 사례", "tags": ["RabbitMQ", "NSX DFW", "TCP", "패킷 분석"], "result": "네트워크 계층 원인 규명", "context": "3노드 RabbitMQ 클러스터에서 노드 간 통신이 끊기며 거래 로그 처리와 서비스 응답이 지연됐습니다.", "analysis": "Heartbeat 누락 시점의 TCP 재전송과 DVFilter 드롭을 연계해 분석했습니다. 포트폴리오에서는 NSX TCP Sequence 처리 결함과의 연관성을 확인했습니다.", "actions": ["노드 간 통신과 Heartbeat 누락 구간 확인", "TCP 재전송·Sequence와 방화벽 드롭 카운터 비교", "제품 알려진 이슈와 현상 대조", "NSX 업그레이드 및 방화벽 예외처리 해결안 제시"], "outcome": "RabbitMQ 자체 증상을 넘어 NSX DFW의 TCP 흐름 드롭을 원인으로 좁혔고, 인프라 계층의 개선 방안을 제시했습니다."},
-    {"id": "log-cache", "category": "성능 개선", "title": "Log Cache 리소스 최적화", "subtitle": "실측 트래픽을 근거로 과도한 캐시 설정 재조정", "period": "금융권 PaaS 운영 사례", "tags": ["Grafana", "ELK", "Log Cache", "Loggregator"], "result": "CPU 90%+ → 50–60%", "context": "로그 유실과 Log Cache CPU 임계값 초과가 지속돼 로그 파이프라인과 자원 할당 점검이 필요했습니다.", "analysis": "이전 오토스케일 대응 중 과도하게 설정한 max_per_source를 확인하고, 3개월간의 지표·트래픽 패턴을 대조했습니다.", "actions": ["Grafana 자원 추이와 ELK 로그 교차 분석", "요청량·메트릭 발생량·보관 시간을 기반으로 캐시 설정 재산정", "Beat·Traffic Controller 등 병목 구간을 단계적으로 조정", "조정 전후 CPU와 로그 유실 여부 확인"], "outcome": "포트폴리오 기준 Log Cache CPU 사용률을 90% 이상에서 50~60%대로 안정화하고 로그 처리 안정성을 개선했습니다."},
-    {"id": "cf-push", "category": "장애 분석", "title": "CF Push 배포 흐름 상세 분석", "subtitle": "46개 단계로 나누어 배포 지연의 개선 지점 탐색", "period": "금융권 PaaS 운영 사례", "tags": ["Cloud Foundry", "TAS", "CCDB", "Trace Log"], "result": "46단계 · 앱 3종 분석", "context": "cf push 소요시간의 병목 여부와 인프라 증설 필요성을 판단해야 했습니다.", "analysis": "Upload·Staging·Startup을 총 46개 단계로 세분화하고 3종 앱의 크기·바인딩 차이에 따른 소요시간을 비교했습니다.", "actions": ["cf trace, VM 로그, CCDB Jobs 정보를 기반으로 시간 측정", "단계별 API 호출과 자원 사용률 연계 분석", "Staging·Startup 지연과 앱 특성 비교"], "outcome": "테스트 범위에서 VM 자원 병목이 관찰되지 않아 단순 증설의 근거가 부족함을 확인했습니다. 앱 구조와 초기 기동시간을 개선 지점으로 도출했습니다."},
-    {"id": "gemfire-ha", "category": "가용성 검증", "title": "GemFire 멀티센터 HA 테스트", "subtitle": "장애 시나리오로 검증하는 세션 가용성", "period": "금융권 PaaS 운영 사례", "tags": ["GemFire", "WAN Gateway", "Locator", "HA"], "result": "8개 장애 시나리오 검증", "context": "멀티센터 환경에서 GemFire 세션과 복제 구성의 가용성을 확인해야 했습니다.", "analysis": "Locator와 Server 장애를 나누어 테스트하고 세션·복제 동작을 확인했습니다.", "actions": ["멀티센터 GemFire 및 WAN Gateway 구성 검토", "Locator·Server 강제 종료를 포함한 8개 장애 시나리오 검증", "테스트 결과를 바탕으로 Replica 구성 가이드 정리"], "outcome": "장애 시 동작을 검증하고 Replica 구성 가이드라인을 수립했습니다."},
-    {"id": "routing", "category": "플랫폼 구축", "title": "TAS 라우팅 자동화 개선", "subtitle": "재기동 이후에도 유지되는 네트워크 구성", "period": "금융권 PaaS 운영 사례", "tags": ["BOSH Release", "Monit", "AWS CLI", "Network"], "result": "라우팅 유실·Gateway 중복 개선", "context": "DHCP 의존 구성에서 재기동 후 라우팅 유실과 Gateway 중복 문제가 발생했습니다.", "analysis": "IP 할당과 라우팅 설정의 생명주기를 확인하고 재기동 후에도 설정이 일관되도록 개선했습니다.", "actions": ["Static IP 기반 구성으로 전환", "BOSH custom release와 Monit 기반 자동화 구성 개선", "재기동 상황에서 라우팅 유지 여부 확인"], "outcome": "재기동에 따른 라우팅 유실과 Gateway 중복 문제를 개선했습니다."},
-    {"id": "allone", "category": "가용성 검증", "title": "올원뱅크 가용성·성능 테스트", "subtitle": "오토스케일 지연과 세션 처리 병목 분석", "period": "금융권 PaaS 운영 사례", "tags": ["Autoscaler", "GemFire", "Log Cache", "Thread Dump"], "result": "1,600 TPS 이상 테스트 안정화", "context": "부하 증가 시 오토스케일이 지연되고 GemFire 세션 처리에서 응답 지연이 발생했습니다.", "analysis": "로그 수집 지연과 메트릭 경로를 점검하고 Thread dump로 GemFire registerInterest 구간의 경합을 확인했습니다.", "actions": ["로그 수집 파이프라인 용량 및 메트릭 수집 간격 조정", "GemFire Subscription 설정의 필요성과 경합 분석", "불필요한 Subscription을 해제한 후 부하 테스트 재수행"], "outcome": "포트폴리오의 테스트 조건에서 Subscription 조정 후 1,600 TPS 이상의 부하에서도 해당 스레드 경합과 지연이 나타나지 않았습니다. 초기 캐시 과다 설정은 이후 Log Cache 최적화에서 재조정했습니다."}
+    {
+      "id": "nh-maintenance",
+      "category": "플랫폼 운영",
+      "title": "NH은행 프라이빗 클라우드 PaaS 플랫폼 유지보수",
+      "subtitle": "클라우드 인프라 운영 및 유지보수 담당",
+      "period": "2022.01 ~ 2026.11",
+      "client": "NH농협은행 / 농협중앙회",
+      "contractor": "데이터솔루션",
+      "role": "클라우드 인프라 운영 및 유지보수 담당",
+      "tags": [
+        "VMware TAS",
+        "BOSH",
+        "Cloud Foundry",
+        "ELK Stack",
+        "CI/CD",
+        "AWS",
+        "Kubernetes",
+        "CSPM",
+        "네트워크 라우팅",
+        "보안",
+        "서비스 장애 분석"
+      ],
+      "result": "9개 주요 수행 영역 · 상세 내역 보기",
+      "context": "NH농협은행 및 중앙회의 PaaS 프라이빗 클라우드 환경에서 TAS 기반의 대고객 서비스, 내부업무, 대규모 컨테이너 환경을 안정적으로 운영하였습니다. 올원뱅크, 콕뱅크, 스마트뱅킹 등 디지털 금융 차세대 프로젝트에 참여하였고, 신규 서비스 확장과 장애 대응까지 전반적인 운영을 담당하였습니다.",
+      "analysis": "",
+      "actions": [],
+      "outcome": "",
+      "sections": [
+        {
+          "title": "프로젝트 개요",
+          "lines": [
+            "NH농협은행 및 중앙회의 PaaS 프라이빗 클라우드 환경에서 TAS 기반의 대고객 서비스, 내부업무, 대규모 컨테이너 환경을 안정적으로 운영하였습니다. 올원뱅크, 콕뱅크, 스마트뱅킹 등 디지털 금융 차세대 프로젝트에 참여하였고, 신규 서비스 확장과 장애 대응까지 전반적인 운영을 담당하였습니다."
+          ]
+        },
+        {
+          "title": "주요 업무 및 성과",
+          "lines": [
+            "- **플랫폼 운영 자동화 및 정기점검**",
+            "    - 일일 점검 스크립트 개발 및 운영 자동화",
+            "    - VM 상태 점검(NTP 동기화, 하트비트, 로그 확인 등)",
+            "    - EOGS 도래 시 보안 패치 및 업그레이드 수행",
+            "- **플랫폼 인증서 갱신 및 교체**",
+            "    - 인증서 만료 사전 탐지 및 갱신 자동화",
+            "    - BOSH 기반 인증서 교체 작업 주도",
+            "- **다중 환경 장애대응 및 사후 분석**",
+            "    - 개발/운영/DR/AWS 환경에 대한 장애 분석 및 대응",
+            "    - 로그 기반 트러블슈팅 및 원인분석",
+            "- **연계 시스템 구성 및 통합**",
+            "    - ELK, 클라우드포탈, CI/CD 구성 및 운영 지원",
+            "    - CI/CD 파이프라인 자동화 지원",
+            "- **보안 강화 및 컴플라이언스 대응**",
+            "    - ISMS-P 심사 대응",
+            "    - 보안 솔루션 연동 및 정책 적용 (CSPM, os보안, 취약점 백신 등)",
+            "- **네트워크 망 분리 및 라우팅 프로세스 구축**",
+            "    - 각 백엔드 망 분리에 따른 클라우드 라우팅 정책 정립",
+            "- **VMware Tanzu 성능 테스트 및 서비스 분석**",
+            "    - 올원뱅크, 디지털금융 앱 성능 분석 및 최적화",
+            "- **쿠버네티스 기반 보안 가이드 작성**",
+            "    - Kubernetes → CF 기반 기반 전환 대응 문서화",
+            "- **장애 사례 분석 및 사내 세미나 발표**",
+            "    - 마케팅허브, 스마트뱅킹, NH카드 등 주요 장애 원인 분석",
+            "    - NH 내부 세미나 발표 3회 진행"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "nh-card",
+      "category": "플랫폼 구축",
+      "title": "NH카드 통합 디지털 플랫폼 구축 프로젝트",
+      "subtitle": "카드 업무 PaaS 클라우드 전환 담당",
+      "period": "2024.01 ~ 2024.11",
+      "client": "농협카드",
+      "contractor": "LG CNS",
+      "role": "카드 업무 PaaS 클라우드 전환 담당",
+      "tags": [
+        "VMware Tanzu Application Service",
+        "GemFire",
+        "BOSH",
+        "Cloud Foundry",
+        "PaaS 교육",
+        "컨테이너 성능 테스트",
+        "Application 용량 산정",
+        "자동화 테스트",
+        "운영 매뉴얼 작성"
+      ],
+      "result": "7개 주요 수행 영역 · 상세 내역 보기",
+      "context": "NH카드 차세대 시스템을 위한 디지털 통합 플랫폼을 구축하는 프로젝트로, 기존 온프레미스 인프라의 성능 및 안정성을 개선하고 클라우드 기반으로의 전환을 추진했습니다. VMware Tanzu 기반의 PaaS 환경을 설계 및 구축하였고, 카드 전용 인프라 구성 및 서비스 분리 정책을 도입하여 **서비스 이중화**, **고가용성**, **분산 처리 기반의 안정성 강화**를 실현했습니다.",
+      "analysis": "",
+      "actions": [],
+      "outcome": "",
+      "sections": [
+        {
+          "title": "프로젝트 개요",
+          "lines": [
+            "NH카드 차세대 시스템을 위한 디지털 통합 플랫폼을 구축하는 프로젝트로, 기존 온프레미스 인프라의 성능 및 안정성을 개선하고 클라우드 기반으로의 전환을 추진했습니다. VMware Tanzu 기반의 PaaS 환경을 설계 및 구축하였고, 카드 전용 인프라 구성 및 서비스 분리 정책을 도입하여 **서비스 이중화**, **고가용성**, **분산 처리 기반의 안정성 강화**를 실현했습니다."
+          ]
+        },
+        {
+          "title": "주요 수행 내용 및 성과",
+          "lines": [
+            "- **NH카드 전용 PaaS 클러스터 및 AZ 구성**",
+            "    - 카드 서비스 전용 클러스터 및 가용 영역 구성",
+            "    - BOSH를 통한 멀티 AZ 배포 전략 설계 및 구축",
+            "- **고객 서비스/대고객 환경 분리 구성**",
+            "    - Isolation Segment를 활용하여 서비스 분리 구성",
+            "    - 카드 서비스 전용 Isolation Segment를 구성하여 TAS 내 다른 서비스와 논리적 경계를 분리하고 장애 전파 및 리소스 간섭을 최소화",
+            "- **Tanzu 서비스 배포 및 GemFire 리전 구성**",
+            "    - 카드 트랜잭션 처리 특성에 맞춰 Tanzu GemFire를 리전 단위로 구성",
+            "    - 대용량 데이터 처리와 region 이중화 전략 반영",
+            "- **NH카드 전용 개발 환경 구성**",
+            "    - 개발/검증/운영/DR 환경별 Space 및 Org 분리",
+            "    - 환경별 리소스 할당 자동화",
+            "- **개발자 대상 PaaS 플랫폼 교육 및 가이드 지원**",
+            "    - NH카드 개발자 대상 Cloud Foundry 기반 앱 배포 프로세스 교육",
+            "    - 개발자별 Space 발급 및 운영 가이드 배포",
+            "- **VM/컨테이너 성능 테스트 및 튜닝**",
+            "    - 애플리케이션, VM, 컨테이너 리소스 사용량 분석",
+            "    - 컨테이너 자동 스케일링 테스트 수행",
+            "    - 서비스 특성에 따라 Application sizing 가이드 제공",
+            "- **운영 최적화 가이드 및 문서 작성**",
+            "    - 사용자/운영자 대상 매뉴얼 작성",
+            "    - 장애 발생 시 처리 프로세스 및 복구 절차 문서화"
+          ]
+        },
+        {
+          "title": "개선된 점",
+          "lines": [
+            "- 전통적인 물리 인프라 기반에서 VMware Tanzu 기반 클라우드 PaaS로 전환하여 **서비스 배포 속도 향상**",
+            "- 개발-운영 간 책임 구분 명확화 및 **CI/CD 기반 배포 표준화**",
+            "- 컨테이너 기반 서비스 운영으로 **서비스 장애 분리 및 복구 시간 단축(RTO 단축)**"
+          ]
+        },
+        {
+          "title": "본인 기여도",
+          "lines": [
+            "- 초기 요구사항 분석 및 카드 서비스 전용 아키텍처 설계 주도",
+            "- BOSH 기반 멀티 AZ 배포, Isolation Segment 설계 및 검증 수행",
+            "- 성능 테스트 설계 및 결과 분석 후 Application Sizing 기준 수립",
+            "- 개발자 가이드 문서 및 운영 매뉴얼 작성 전담"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "nh-central-production",
+      "category": "플랫폼 구축",
+      "title": "NH중앙회 프라이빗 클라우드 구축 프로젝트 (운영 환경)",
+      "subtitle": "농협중앙회 프라이빗 PaaS 클라우드 구축 담당",
+      "period": "2024.03 ~ 2024.06",
+      "client": "농협중앙회",
+      "contractor": "Dell Technologies / 데이터솔루션",
+      "role": "농협중앙회 프라이빗 PaaS 클라우드 구축 담당",
+      "tags": [
+        "VMware TAS",
+        "BOSH",
+        "Gemfire",
+        "RabbitMQ",
+        "Spring Cloud Gateway",
+        "App Metric",
+        "Healthwatch",
+        "Grafana",
+        "Prometheus",
+        "GitLab CI/CD",
+        "Cloud Portal",
+        "ELK"
+      ],
+      "result": "9개 주요 수행 영역 · 상세 내역 보기",
+      "context": "농협중앙회의 기존 물리 인프라를 가상화 기반 리소스로 전환하고, IaaS/PaaS 통합 클라우드 환경을 구축하여 운영 및 개발 효율성을 향상시킨 프로젝트입니다. DevOps 체계 정착을 위해 CI/CD 파이프라인과 자동화 도구를 도입하였고, 스마트뱅킹 전용 인프라 구성과 모니터링 체계를 동시에 구축했습니다.",
+      "analysis": "",
+      "actions": [],
+      "outcome": "",
+      "sections": [
+        {
+          "title": "프로젝트 개요",
+          "lines": [
+            "농협중앙회의 기존 물리 인프라를 가상화 기반 리소스로 전환하고, IaaS/PaaS 통합 클라우드 환경을 구축하여 운영 및 개발 효율성을 향상시킨 프로젝트입니다. DevOps 체계 정착을 위해 CI/CD 파이프라인과 자동화 도구를 도입하였고, 스마트뱅킹 전용 인프라 구성과 모니터링 체계를 동시에 구축했습니다."
+          ]
+        },
+        {
+          "title": "주요 수행 내용 및 성과",
+          "lines": [
+            "- 중앙회 개발 전용 PaaS 클러스터 환경 구축",
+            "    - BOSH, TAS, Gemfire, Healthwatch(Grafana), App Metric, Spring Cloud Gateway, RabbitMQ 등 주요 컴포넌트 설치 및 연동",
+            "    - Spring Cloud 기반 마이크로서비스 구동 환경 조성",
+            "- AZ 및 네트워크 구성",
+            "    - 클러스터 단위의 AZ 구성 및 네트워크 설계",
+            "    - 고가용성 및 장애 분리 구조 설계",
+            "- VM 리소스 사용량 기반 플랫폼 설계",
+            "    - CPU, Memory, Disk 사용량 분석을 통한 VM 스펙 정의",
+            "    - PaaS 최적 자원 산정 가이드 수립",
+            "- 통합 모니터링 시스템 구축",
+            "    - Grafana, Prometheus 기반 대시보드 구성",
+            "    - 서비스/리소스 상태 커스텀 대시보드 구축",
+            "- 디지털 금융 차세대 프로젝트 앱 배포 환경 구성 및 지원",
+            "    - 스마트뱅킹 전용 클러스터 및 VM 구성",
+            "    - 전용 Isolation Segment 및 Org/Space 분리 배포 구조 설계",
+            "- 고객사 대상 플랫폼 교육 진행",
+            "    - TAS 환경 운영자 대상 실습 기반 교육 진행",
+            "    - 구성 요소 및 운영 절차 문서화",
+            "- 운영 환경 상세 문서 작성",
+            "    - 리소스, 서비스, 아키텍처, 설정 내역 등 전반 문서화",
+            "    - YAML 템플릿 및 배포 스크립트 작성",
+            "- ELK, CI/CD 등 연계 시스템 지원",
+            "    - 중앙회 기존 로그 플랫폼(ELK)과 TAS 로그 연계",
+            "    - NH에서 사용 중인 클라우드 포탈 ↔ TAS 연계",
+            "    - CI/CD Gitlab 기반 배포쉘 작성 및 Manifest 작성",
+            "- 문서/가이드 작성",
+            "    - TAS 운영 매뉴얼, 구성 설계서, 셸 스크립트 기반 배포 가이드, 사용자 교육 자료 등 다수 문서화"
+          ]
+        },
+        {
+          "title": "개선된 점",
+          "lines": [
+            "- 모듈형 배포 구조를 적용함으로써 신규 서비스의 배포 속도 및 장애 복구 시간 단축",
+            "- PaaS 리소스 사용량 기반 VM 정의로 클러스터 자원 낭비 최소화",
+            "- 운영/개발 환경 분리를 통한 안전한 배포 프로세스 정착",
+            "- 스마트뱅킹 고도화 환경에 안정적이고 분리된 실행 환경 제공"
+          ]
+        },
+        {
+          "title": "본인 기여도",
+          "lines": [
+            "- TAS, Gemfire, RabbitMQ, Healthwatch 등 핵심 컴포넌트 설치 및 연동",
+            "- PaaS 클러스터 구성 설계 및 구성 파일 직접 작성",
+            "- ELK 연동, CI/CD 통합 자동화 파이프라인 연계 지원",
+            "- 교육 교안 작성 및 현장 실습 교육 운영 주도",
+            "- YAML manifest 작성 및 테스트 배포 셀 스크립트 직접 구현"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "allone-aws-dr",
+      "category": "재해복구 구축",
+      "title": "NH은행 올원뱅크 퍼블릭 클라우드 재해복구시스템 구성",
+      "subtitle": "AWS + VMware Tanzu 기반 PaaS 환경 구축 및 멀티클라우드 DR 연동",
+      "period": "2023.05 ~ 2024.01",
+      "client": "농협은행",
+      "contractor": "메가존클라우드 / 데이터솔루션",
+      "role": "AWS + VMware Tanzu 기반 PaaS 환경 구축 및 멀티클라우드 DR 연동",
+      "tags": [
+        "VMware TAS",
+        "AWS EC2",
+        "S3",
+        "Gemfire",
+        "RabbitMQ",
+        "Spring Cloud Gateway",
+        "Spring Cloud Service",
+        "App Metric",
+        "Healthwatch (Grafana)",
+        "BOSH",
+        "Blobstore",
+        "Security Group",
+        "Shell Script",
+        "DR 앱 이관"
+      ],
+      "result": "7개 주요 수행 영역 · 상세 내역 보기",
+      "context": "기존 vCenter 기반의 온프레미스 인프라에서 벗어나, AWS 퍼블릭 클라우드 기반으로 VMware Tanzu 환경을 구축하고 올원뱅크의 재해복구(Disaster Recovery) 체계를 마련한 프로젝트입니다. 본사 인프라와 AWS 환경 간 멀티클라우드 연동 및 실제 서비스 이행을 포함하여 전체 플랫폼을 설계, 구현 및 검증하였습니다.",
+      "analysis": "",
+      "actions": [],
+      "outcome": "",
+      "sections": [
+        {
+          "title": "프로젝트 개요",
+          "lines": [
+            "기존 vCenter 기반의 온프레미스 인프라에서 벗어나, AWS 퍼블릭 클라우드 기반으로 VMware Tanzu 환경을 구축하고 올원뱅크의 재해복구(Disaster Recovery) 체계를 마련한 프로젝트입니다. 본사 인프라와 AWS 환경 간 멀티클라우드 연동 및 실제 서비스 이행을 포함하여 전체 플랫폼을 설계, 구현 및 검증하였습니다."
+          ]
+        },
+        {
+          "title": "주요 수행 내용 및 성과",
+          "lines": [
+            "- **BMT(Benchmark Test) 환경 구축 및 연동 검증**",
+            "    - 테스트 환경에서 TAS 설치 후 기존 온프레미스 환경과 연동",
+            "    - BMT 시나리오를 기반으로 성능/확장성 테스트 진행",
+            "- **AWS 상에서 VMware Tanzu 서비스 구성**",
+            "    - BOSH, TAS, Gemfire, RabbitMQ, Spring Cloud Service 등 핵심 컴포넌트 설치",
+            "    - Healthwatch(Grafana), App Metric을 통한 모니터링 체계 구성",
+            "- **보안 그룹 및 네트워크 설정 (AWS + VMware Tanzu 보안 통합)**",
+            "    - AWS 보안 그룹을 기반으로 Tanzu 서비스 간 통신을 위한 포트 정책 정의",
+            "    - 서비스별 Endpoint 및 리소스 간 방화벽 연동 구성",
+            "- **AWS 기반 TAS 환경 최적화 적용**",
+            "    - 컨테이너 환경의 오토스케일링 설정 및 Gemfire 설정 자동화",
+            "    - Spring 기반 앱에 대한 환경 변수 설정 및 S3 연동 방식 도입",
+            "- **멀티 리전/멀티 AZ 기반 DR 구성 설계**",
+            "    - Blobstore 대신 AWS S3 연동을 통해 이미지 저장 방식 개선",
+            "    - DR 시나리오에 따라 지역간 TAS 재배포 테스트 진행",
+            "    - 멀티 리전 Blobstore 구성 및 리전 간 전환 스크립트 작성",
+            "- **보안 솔루션 연동 자동화 스크립트 작성**",
+            "    - Shell 기반 자동화 스크립트를 통해 보안 정책 설치 자동화",
+            "    - S3 연동, Gemfire 리전 구성, 오토스케일 파라미터 설정 등 자동화 구현",
+            "- **고객사 대상 멀티클라우드 구성 교육 및 운영 이관**",
+            "    - 고객 운영팀 대상 멀티클라우드 DR 구조 교육 및 문서 전달",
+            "    - 실제 올원뱅크 DR 앱 배포 및 운영 지원"
+          ]
+        },
+        {
+          "title": "개선된 점",
+          "lines": [
+            "- 기존 온프레미스와 분리된 AWS DR 환경을 구성함으로써 재해 복구 시 이중화 체계 확립",
+            "- 이미지 저장 및 Blobstore를 AWS S3로 대체하여 **스토리지 비용 절감 및 유연한 백업 구조 확보**",
+            "- 컨테이너 자동화 및 모니터링 체계로 운영 효율성을 높이고 장애 대응 시간 단축"
+          ]
+        },
+        {
+          "title": "본인 기여도",
+          "lines": [
+            "- AWS 상 VMware Tanzu 서비스 구성 전반을 주도",
+            "- 보안 그룹 설계, S3 기반 Blobstore 연동, Gemfire 구성 수행",
+            "- DR 전환 시나리오에 따른 배포 테스트 및 Shell Script 작성",
+            "- 멀티클라우드 구성 교육자료 및 운영 인수인계 문서화"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "nh-central-development",
+      "category": "플랫폼 구축",
+      "title": "NH중앙회 프라이빗 클라우드 구축 프로젝트 (개발 환경)",
+      "subtitle": "농협중앙회 프라이빗 PaaS 클라우드 구축 담당",
+      "period": "2023.07 ~ 2023.10",
+      "client": "농협중앙회",
+      "contractor": "Dell Technologies / 데이터솔루션",
+      "role": "농협중앙회 프라이빗 PaaS 클라우드 구축 담당",
+      "tags": [
+        "VMware TAS",
+        "BOSH",
+        "Gemfire",
+        "RabbitMQ",
+        "Spring Cloud Gateway",
+        "App Metric",
+        "Healthwatch",
+        "Grafana",
+        "Prometheus",
+        "GitLab CI/CD",
+        "Cloud Portal",
+        "ELK"
+      ],
+      "result": "9개 주요 수행 영역 · 상세 내역 보기",
+      "context": "농협중앙회의 기존 물리 인프라를 가상화 기반 리소스로 전환하고, IaaS/PaaS 통합 클라우드 환경을 구축하여 운영 및 개발 효율성을 향상시킨 프로젝트입니다. DevOps 체계 정착을 위해 CI/CD 파이프라인과 자동화 도구를 도입하였고, 스마트뱅킹 전용 인프라 구성과 모니터링 체계를 동시에 구축했습니다.",
+      "analysis": "",
+      "actions": [],
+      "outcome": "",
+      "sections": [
+        {
+          "title": "프로젝트 개요",
+          "lines": [
+            "농협중앙회의 기존 물리 인프라를 가상화 기반 리소스로 전환하고, IaaS/PaaS 통합 클라우드 환경을 구축하여 운영 및 개발 효율성을 향상시킨 프로젝트입니다. DevOps 체계 정착을 위해 CI/CD 파이프라인과 자동화 도구를 도입하였고, 스마트뱅킹 전용 인프라 구성과 모니터링 체계를 동시에 구축했습니다."
+          ]
+        },
+        {
+          "title": "주요 수행 내용 및 성과",
+          "lines": [
+            "- 중앙회 개발 전용 PaaS 클러스터 환경 구축",
+            "    - BOSH, TAS, Gemfire, Healthwatch(Grafana), App Metric, Spring Cloud Gateway, RabbitMQ 등 주요 컴포넌트 설치 및 연동",
+            "    - Spring Cloud 기반 마이크로서비스 구동 환경 조성",
+            "- AZ 및 네트워크 구성",
+            "    - 클러스터 단위의 AZ 구성 및 네트워크 설계",
+            "    - 고가용성 및 장애 분리 구조 설계",
+            "- VM 리소스 사용량 기반 플랫폼 설계",
+            "    - CPU, Memory, Disk 사용량 분석을 통한 VM 스펙 정의",
+            "    - PaaS 최적 자원 산정 가이드 수립",
+            "- 통합 모니터링 시스템 구축",
+            "    - Grafana, Prometheus 기반 대시보드 구성",
+            "    - 서비스/리소스 상태 커스텀 대시보드 구축",
+            "- 디지털 금융 차세대 프로젝트 앱 배포 환경 구성 및 지원",
+            "    - 스마트뱅킹 전용 클러스터 및 VM 구성",
+            "    - 전용 Isolation Segment 및 Org/Space 분리 배포 구조 설계",
+            "- 고객사 대상 플랫폼 교육 진행",
+            "    - TAS 환경 운영자 대상 실습 기반 교육 진행",
+            "    - 구성 요소 및 운영 절차 문서화",
+            "- 운영 환경 상세 문서 작성",
+            "    - 리소스, 서비스, 아키텍처, 설정 내역 등 전반 문서화",
+            "    - YAML 템플릿 및 배포 스크립트 작성",
+            "- ELK, CI/CD 등 연계 시스템 지원",
+            "    - 중앙회 기존 로그 플랫폼(ELK)과 TAS 로그 연계",
+            "    - NH에서 사용 중인 클라우드 포탈 ↔ TAS 연계",
+            "    - CI/CD Gitlab 기반 배포쉘 작성 및 Manifest 작성",
+            "- 문서/가이드 작성",
+            "    - TAS 운영 매뉴얼, 구성 설계서, 셸 스크립트 기반 배포 가이드, 사용자 교육 자료 등 다수 문서화"
+          ]
+        },
+        {
+          "title": "개선된 점",
+          "lines": [
+            "- 모듈형 배포 구조를 적용함으로써 신규 서비스의 배포 속도 및 장애 복구 시간 단축",
+            "- PaaS 리소스 사용량 기반 VM 정의로 클러스터 자원 낭비 최소화",
+            "- 운영/개발/테스트 환경 분리를 통한 안전한 배포 프로세스 정착",
+            "- 스마트뱅킹 고도화 환경에 안정적이고 분리된 실행 환경 제공"
+          ]
+        },
+        {
+          "title": "본인 기여도",
+          "lines": [
+            "- TAS, Gemfire, RabbitMQ, Healthwatch 등 핵심 컴포넌트 설치 및 연동",
+            "- PaaS 클러스터 구성 설계 및 구성 파일 직접 작성",
+            "- ELK 연동, CI/CD 통합 자동화 파이프라인 구축",
+            "- 교육 교안 작성 및 현장 실습 교육 운영 주도",
+            "- YAML manifest 작성 및 테스트 배포 셀 스크립트 직접 구현"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "kb-life-dr",
+      "category": "재해복구 구축",
+      "title": "KB생명보험 재해복구 인프라 도입 및 재구성",
+      "subtitle": "PaaS 기반 DR 인프라 환경 구축, CI/CD 파이프라인 수정 및 애플리케이션 이관",
+      "period": "2022.08 ~ 2022.10",
+      "client": "KB생명",
+      "contractor": "데이터솔루션",
+      "role": "PaaS 기반 DR 인프라 환경 구축, CI/CD 파이프라인 수정 및 애플리케이션 이관",
+      "tags": [
+        "VMware TAS",
+        "BOSH",
+        "Gemfire",
+        "RabbitMQ",
+        "Spring Cloud Gateway",
+        "Spring Cloud Service",
+        "App Metric",
+        "Healthwatch (Grafana)",
+        "Grafana Custom",
+        "NFS",
+        "Shell Script",
+        "application.yml",
+        "CI/CD"
+      ],
+      "result": "6개 주요 수행 영역 · 상세 내역 보기",
+      "context": "기존 대고객 서비스의 재해복구 체계를 강화하고, 운영/개발 환경을 분리하여 안정성과 보안성을 확보하는 동시에 최소한의 자원 재배치로 인프라 효율성을 극대화하는 프로젝트였습니다. VMware Tanzu 기반의 DR 인프라를 신규로 구축하고, DR 환경에 맞춘 CI/CD 파이프라인 재정비와 데이터 백업/로그 시스템도 함께 구현하였습니다.",
+      "analysis": "",
+      "actions": [],
+      "outcome": "",
+      "sections": [
+        {
+          "title": "프로젝트 개요",
+          "lines": [
+            "기존 대고객 서비스의 재해복구 체계를 강화하고, 운영/개발 환경을 분리하여 안정성과 보안성을 확보하는 동시에 최소한의 자원 재배치로 인프라 효율성을 극대화하는 프로젝트였습니다. VMware Tanzu 기반의 DR 인프라를 신규로 구축하고, DR 환경에 맞춘 CI/CD 파이프라인 재정비와 데이터 백업/로그 시스템도 함께 구현하였습니다."
+          ]
+        },
+        {
+          "title": "주요 수행 내용 및 성과",
+          "lines": [
+            "- **신규 DR 인프라 내 VMware Tanzu 서비스 설치**",
+            "    - BOSH, TAS, Gemfire, RabbitMQ, Spring Cloud Gateway 등 핵심 컴포넌트 설치 및 구성",
+            "    - App Metric 및 Healthwatch 기반 모니터링 환경 구성",
+            "- **기존 운영 환경 설정을 반영한 DR용 시스템 구성 및 데이터 이관**",
+            "    - 백업 정책 수립 및 적용 (자동화 스크립트 포함)",
+            "    - 외부 Third-Party 모니터링 솔루션과 연계",
+            "    - 테스트 및 개발 환경의 정책 이관 및 검증 수행",
+            "- **DR 환경 전용 CI/CD 파이프라인 구성**",
+            "    - DR 환경 배포용 manifest.yml 작성 및 배포용 Shell Script 작성",
+            "    - CI/CD 파이프라인 내 드라이버 환경 분기 및 자동화 구성",
+            "- **DR 환경 앱 재구성 및 배포**",
+            "    - application.yml 및 profile 수정",
+            "    - DR용 Org 및 Space 구성 및 자동 배포 처리",
+            "    - DR 전환 시 대응 가능한 앱 구성 자동화",
+            "- **NFS 기반 백업 스토리지 연동**",
+            "    - 백업 전용 마운트 경로 구성",
+            "    - 지속적 백업 저장을 위한 NAS 연계 시스템 구성",
+            "- **플랫폼 백업 및 로그 수집 시스템 구축**",
+            "    - Grafana 기반 커스텀 대시보드 생성",
+            "    - 백업 정책에 맞춘 로그 수집 및 저장 스크립트 작성"
+          ]
+        },
+        {
+          "title": "개선된 점",
+          "lines": [
+            "- DR 환경을 별도 인프라 없이 재활용 리소스를 기반으로 구축하여 **비용 효율성**을 확보",
+            "- 운영 환경과 DR 환경 간 완전 분리로 **보안성과 연속성 확보**",
+            "- CI/CD 파이프라인 분기 구성으로 **재해 시 앱 자동 전환 가능 구조 확보**"
+          ]
+        },
+        {
+          "title": "본인 기여도",
+          "lines": [
+            "- TAS, RabbitMQ, Gemfire 등 핵심 서비스 설치 및 초기 구성 전담",
+            "- DR 환경 전용 배포 스크립트 및 CI/CD 파이프라인 구성 수행",
+            "- application.yml/profile 설정 커스터마이징 및 공간 분리 작업 주도",
+            "- 백업 및 모니터링 시스템 구성, NFS 연계 및 로그 수집 자동화 구현"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "nh-information",
+      "category": "플랫폼 구축",
+      "title": "NH농협은행 정보계 차세대 시스템 구축 사업",
+      "subtitle": "BI포털/마케팅허브 서비스의 PaaS 기반 클라우드 환경 전환 담당",
+      "period": "2022.01 ~ 2022.12",
+      "client": "농협은행",
+      "contractor": "SK C&C",
+      "role": "BI포털/마케팅허브 서비스의 PaaS 기반 클라우드 환경 전환 담당",
+      "tags": [
+        "VMware TAS",
+        "Diego Cell",
+        "Gorouter",
+        "NSX",
+        "Spring Cloud Gateway",
+        "Spring Cloud Service",
+        "Gemfire",
+        "Isolation Segment",
+        "로드러너",
+        "성능모니터링",
+        "TPS 측정",
+        "아키텍처 정의서",
+        "환경 변수 설정"
+      ],
+      "result": "4개 주요 수행 영역 · 상세 내역 보기",
+      "context": "농협은행의 BI포털과 마케팅허브 시스템을 VMware Tanzu 기반 PaaS 환경으로 전환하여 대량 데이터 수집/분석을 위한 고성능 플랫폼을 구축하고, 마케팅 패러다임 변화 대응력을 확보하기 위한 차세대 정보계 시스템을 클라우드 상에 구현한 프로젝트입니다.",
+      "analysis": "",
+      "actions": [],
+      "outcome": "",
+      "sections": [
+        {
+          "title": "프로젝트 개요",
+          "lines": [
+            "농협은행의 BI포털과 마케팅허브 시스템을 VMware Tanzu 기반 PaaS 환경으로 전환하여 대량 데이터 수집/분석을 위한 고성능 플랫폼을 구축하고, 마케팅 패러다임 변화 대응력을 확보하기 위한 차세대 정보계 시스템을 클라우드 상에 구현한 프로젝트입니다."
+          ]
+        },
+        {
+          "title": "주요 수행 내용 및 성과",
+          "lines": [
+            "- **성능 테스트 기반 플랫폼 부하 검증 및 분석**",
+            "    - 로드러너(Loadrunner)를 활용하여 1,000 TPS 이상을 목표로 성능 테스트 수행",
+            "    - 부하 유입 시 NSX Load Balancer → TAS Gorouter → Application(Container) 흐름 분석",
+            "    - Diego Cell, Gorouter, Application 컨테이너의 CPU, Memory, 리소스 사용량 분석",
+            "    - 서비스별 리소스 사용량 및 에러 지표 수집",
+            "- **PaaS 시스템 논리적 분리 및 리소스 최적화 구성**",
+            "    - Isolation Segment를 이용해 Diego Cell, Gorouter VM을 물리적으로 분리하여 리소스 간섭 최소화",
+            "    - 클러스터 간 업무 영역 분리 설계 및 네트워크 대역 분리 적용",
+            "    - 성능 및 장애 격리 구조 확립",
+            "- **정보계 기반 서비스 컴포넌트 생성 및 환경 구성**",
+            "    - Spring Cloud Gateway 및 Service 컴포넌트 생성과 환경 변수 설정",
+            "    - Gemfire 서비스 생성 시 region 단위 구분 및 region type 지정",
+            "    - 각 서비스별 사용자 정의 환경 변수 세팅으로 맞춤형 설정 제공",
+            "- **문서화 및 운영 인계**",
+            "    - TAS 운영 매뉴얼 작성 및 성능 테스트 결과 반영",
+            "    - 서비스 아키텍처 정의서 작성 및 PaaS 구조 내 설명 문서화"
+          ]
+        },
+        {
+          "title": "개선된 점",
+          "lines": [
+            "- 기존 물리 인프라 대비 성능 분리 및 리소스 확장성 확보",
+            "- Isolation Segment 기반 구조를 통해 TPS 부하 시 서비스 간 영향 최소화",
+            "- 성능 검증 기반의 구조 설계로 정보계 시스템의 안정성과 확장성 확보"
+          ]
+        },
+        {
+          "title": "본인 기여도",
+          "lines": [
+            "- 전체 성능 테스트 설계 및 실행 주도, TPS 목표값 기반 리소스 튜닝",
+            "- Diego Cell, Gorouter 자원 모니터링 및 로그 기반 병목 지점 분석",
+            "- Gemfire 및 Spring 기반 서비스 구성과 환경 변수 세팅 직접 수행",
+            "- PaaS 구조 분리 설계 및 문서화, 기술 정의서 작성 전담"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "nh-elk",
+      "category": "모니터링 구축",
+      "title": "NH농협은행 로그 모니터링 고도화 (ELK 연계 사업)",
+      "subtitle": "VMware TAS 환경의 로그 및 메트릭 데이터를 ELK 모니터링 시스템으로 전달 및 연동 구성 담당",
+      "period": "2021.09 ~ 2021.12",
+      "client": "농협은행",
+      "contractor": "Dell Technologies / 데이터솔루션",
+      "role": "VMware TAS 환경의 로그 및 메트릭 데이터를 ELK 모니터링 시스템으로 전달 및 연동 구성 담당",
+      "tags": [
+        "VMware TAS",
+        "Logstash",
+        "Beats",
+        "ELK",
+        "APM",
+        "Application 환경 변수",
+        "Log Forwarding",
+        "로그 메트릭 항목 정의"
+      ],
+      "result": "3개 주요 수행 영역 · 상세 내역 보기",
+      "context": "NH농협은행의 PaaS 기반 서비스에서 발생하는 로그와 메트릭 데이터를 외부의 ELK(Elasticsearch, Logstash, Kibana) 모니터링 시스템과 연동하여, 통합 관제 시스템의 기반을 마련하는 프로젝트였습니다. 사용자는 VMware TAS 측 로그 송신 및 수집 구조 설계 및 전달 파이프라인 구성에 집중하여 역할을 수행했습니다.",
+      "analysis": "",
+      "actions": [],
+      "outcome": "",
+      "sections": [
+        {
+          "title": "프로젝트 개요",
+          "lines": [
+            "NH농협은행의 PaaS 기반 서비스에서 발생하는 로그와 메트릭 데이터를 외부의 ELK(Elasticsearch, Logstash, Kibana) 모니터링 시스템과 연동하여, 통합 관제 시스템의 기반을 마련하는 프로젝트였습니다. 사용자는 VMware TAS 측 로그 송신 및 수집 구조 설계 및 전달 파이프라인 구성에 집중하여 역할을 수행했습니다."
+          ]
+        },
+        {
+          "title": "주요 수행 내용 및 성과",
+          "lines": [
+            "- **TAS 로그/메트릭 항목 선별 및 정리**",
+            "    - VMware TAS 내 애플리케이션 및 시스템에서 수집 가능한 로그 및 메트릭 항목을 식별",
+            "    - ELK로 수집할 항목을 목적별로 분류하여 카테고리화",
+            "    - 수집 대상 항목별 레벨 정의 (애플리케이션 로그, 시스템 로그, Gorouter 메트릭 등)",
+            "- **TAS → ELK 로그 전송 연동 파이프라인 구성**",
+            "    - Logstash 또는 Beats를 활용한 로그 수집기 구성에 필요한 전달 방식 지원",
+            "    - TAS 측 로그 포워딩 환경 구성 및 연동 테스트 수행",
+            "    - 로그 전달 시 발생하는 포맷 이슈, 수집 누락 항목에 대한 필터링 및 포맷팅 협의",
+            "- **TAS APM 연계 구성 지원**",
+            "    - APM(Application Performance Monitoring) 전송을 위한 환경 변수 설정 지원",
+            "    - TAS 환경 내 애플리케이션에 필요한 APM 서비스 등록 및 설정 수행",
+            "    - 연동된 APM 메트릭이 Kibana 대시보드로 수신되는 과정 테스트 및 검증"
+          ]
+        },
+        {
+          "title": "개선된 점",
+          "lines": [
+            "- VMware TAS 기반 PaaS 환경에서 발생하는 로그를 **내부 ELK 시스템과 연동**하여, 개발자들이 애플리케이션의 동작 상태와 에러 로그를 **보다 손쉽게 모니터링**",
+            "- 각 로그 항목을 목적별로 구분하여 ELK 저장소 구성의 효율성 향상",
+            "- 개발자 및 운영자가 Kibana에서 실시간 애플리케이션 상태 확인 가능"
+          ]
+        },
+        {
+          "title": "본인 기여도",
+          "lines": [
+            "- TAS 측 로그/메트릭 정의 및 ELK 연계 항목 분류 주도",
+            "- Log Forwarding 연동 방식 구성 및 테스트 수행",
+            "- 애플리케이션에 APM 연계용 환경변수 설정 및 연동 확인",
+            "- ELK 구축팀과 협업하여 연동 포맷 협의 및 테스트 결과 공유"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "marketing-performance",
+      "category": "성능 개선",
+      "title": "마케팅허브 병목 구간 분석",
+      "subtitle": "부하 테스트로 로드밸런서와 애플리케이션 구간을 분리",
+      "period": "금융권 PaaS 운영 사례",
+      "tags": [
+        "Gorouter",
+        "NSX-T",
+        "Nginx",
+        "부하 테스트"
+      ],
+      "result": "5,000 → 10,000+ TPS",
+      "context": "마케팅허브 오픈 이후 응답 지연이 발생해 긴급 대응과 후속 성능 검증이 필요했습니다.",
+      "analysis": "IaaS·PaaS·컨테이너 지표를 대조하고 동일한 GET 요청 시나리오로 로드밸런서 유형별 성능을 비교했습니다.",
+      "actions": [
+        "DR 환경에서 요청 시나리오 재현 및 컴포넌트별 지표 분석",
+        "L7과 L4 로드밸런서의 처리량·지연 비교",
+        "Gorouter·앱 수량을 변경하며 자원 사용률과 지연 측정",
+        "테스트 결과를 바탕으로 운영 컴포넌트 대수 재조정"
+      ],
+      "outcome": "포트폴리오의 테스트 조건에서 L7은 약 5,000 TPS 구간부터 지연이 발생했고, L4는 10,000 TPS를 넘어서도 지연 없이 처리했습니다. 최적 구성으로 Gorouter 6대·웹 앱 4대를 도출했습니다."
+    },
+    {
+      "id": "rabbitmq",
+      "category": "장애 분석",
+      "title": "RabbitMQ Network Partitioning",
+      "subtitle": "애플리케이션 증상에서 가상 네트워크 계층까지 추적",
+      "period": "금융권 PaaS 운영 사례",
+      "tags": [
+        "RabbitMQ",
+        "NSX DFW",
+        "TCP",
+        "패킷 분석"
+      ],
+      "result": "네트워크 계층 원인 규명",
+      "context": "3노드 RabbitMQ 클러스터에서 노드 간 통신이 끊기며 거래 로그 처리와 서비스 응답이 지연됐습니다.",
+      "analysis": "Heartbeat 누락 시점의 TCP 재전송과 DVFilter 드롭을 연계해 분석했습니다. 포트폴리오에서는 NSX TCP Sequence 처리 결함과의 연관성을 확인했습니다.",
+      "actions": [
+        "노드 간 통신과 Heartbeat 누락 구간 확인",
+        "TCP 재전송·Sequence와 방화벽 드롭 카운터 비교",
+        "제품 알려진 이슈와 현상 대조",
+        "NSX 업그레이드 및 방화벽 예외처리 해결안 제시"
+      ],
+      "outcome": "RabbitMQ 자체 증상을 넘어 NSX DFW의 TCP 흐름 드롭을 원인으로 좁혔고, 인프라 계층의 개선 방안을 제시했습니다."
+    },
+    {
+      "id": "log-cache",
+      "category": "성능 개선",
+      "title": "Log Cache 리소스 최적화",
+      "subtitle": "실측 트래픽을 근거로 과도한 캐시 설정 재조정",
+      "period": "금융권 PaaS 운영 사례",
+      "tags": [
+        "Grafana",
+        "ELK",
+        "Log Cache",
+        "Loggregator"
+      ],
+      "result": "CPU 90%+ → 50–60%",
+      "context": "로그 유실과 Log Cache CPU 임계값 초과가 지속돼 로그 파이프라인과 자원 할당 점검이 필요했습니다.",
+      "analysis": "이전 오토스케일 대응 중 과도하게 설정한 max_per_source를 확인하고, 3개월간의 지표·트래픽 패턴을 대조했습니다.",
+      "actions": [
+        "Grafana 자원 추이와 ELK 로그 교차 분석",
+        "요청량·메트릭 발생량·보관 시간을 기반으로 캐시 설정 재산정",
+        "Beat·Traffic Controller 등 병목 구간을 단계적으로 조정",
+        "조정 전후 CPU와 로그 유실 여부 확인"
+      ],
+      "outcome": "포트폴리오 기준 Log Cache CPU 사용률을 90% 이상에서 50~60%대로 안정화하고 로그 처리 안정성을 개선했습니다."
+    },
+    {
+      "id": "cf-push",
+      "category": "장애 분석",
+      "title": "CF Push 배포 흐름 상세 분석",
+      "subtitle": "46개 단계로 나누어 배포 지연의 개선 지점 탐색",
+      "period": "금융권 PaaS 운영 사례",
+      "tags": [
+        "Cloud Foundry",
+        "TAS",
+        "CCDB",
+        "Trace Log"
+      ],
+      "result": "46단계 · 앱 3종 분석",
+      "context": "cf push 소요시간의 병목 여부와 인프라 증설 필요성을 판단해야 했습니다.",
+      "analysis": "Upload·Staging·Startup을 총 46개 단계로 세분화하고 3종 앱의 크기·바인딩 차이에 따른 소요시간을 비교했습니다.",
+      "actions": [
+        "cf trace, VM 로그, CCDB Jobs 정보를 기반으로 시간 측정",
+        "단계별 API 호출과 자원 사용률 연계 분석",
+        "Staging·Startup 지연과 앱 특성 비교"
+      ],
+      "outcome": "테스트 범위에서 VM 자원 병목이 관찰되지 않아 단순 증설의 근거가 부족함을 확인했습니다. 앱 구조와 초기 기동시간을 개선 지점으로 도출했습니다."
+    },
+    {
+      "id": "gemfire-ha",
+      "category": "가용성 검증",
+      "title": "GemFire 멀티센터 HA 테스트",
+      "subtitle": "장애 시나리오로 검증하는 세션 가용성",
+      "period": "금융권 PaaS 운영 사례",
+      "tags": [
+        "GemFire",
+        "WAN Gateway",
+        "Locator",
+        "HA"
+      ],
+      "result": "8개 장애 시나리오 검증",
+      "context": "멀티센터 환경에서 GemFire 세션과 복제 구성의 가용성을 확인해야 했습니다.",
+      "analysis": "Locator와 Server 장애를 나누어 테스트하고 세션·복제 동작을 확인했습니다.",
+      "actions": [
+        "멀티센터 GemFire 및 WAN Gateway 구성 검토",
+        "Locator·Server 강제 종료를 포함한 8개 장애 시나리오 검증",
+        "테스트 결과를 바탕으로 Replica 구성 가이드 정리"
+      ],
+      "outcome": "장애 시 동작을 검증하고 Replica 구성 가이드라인을 수립했습니다."
+    },
+    {
+      "id": "routing",
+      "category": "플랫폼 구축",
+      "title": "TAS 라우팅 자동화 개선",
+      "subtitle": "재기동 이후에도 유지되는 네트워크 구성",
+      "period": "금융권 PaaS 운영 사례",
+      "tags": [
+        "BOSH Release",
+        "Monit",
+        "AWS CLI",
+        "Network"
+      ],
+      "result": "라우팅 유실·Gateway 중복 개선",
+      "context": "DHCP 의존 구성에서 재기동 후 라우팅 유실과 Gateway 중복 문제가 발생했습니다.",
+      "analysis": "IP 할당과 라우팅 설정의 생명주기를 확인하고 재기동 후에도 설정이 일관되도록 개선했습니다.",
+      "actions": [
+        "Static IP 기반 구성으로 전환",
+        "BOSH custom release와 Monit 기반 자동화 구성 개선",
+        "재기동 상황에서 라우팅 유지 여부 확인"
+      ],
+      "outcome": "재기동에 따른 라우팅 유실과 Gateway 중복 문제를 개선했습니다."
+    },
+    {
+      "id": "allone",
+      "category": "가용성 검증",
+      "title": "올원뱅크 가용성·성능 테스트",
+      "subtitle": "오토스케일 지연과 세션 처리 병목 분석",
+      "period": "금융권 PaaS 운영 사례",
+      "tags": [
+        "Autoscaler",
+        "GemFire",
+        "Log Cache",
+        "Thread Dump"
+      ],
+      "result": "1,600 TPS 이상 테스트 안정화",
+      "context": "부하 증가 시 오토스케일이 지연되고 GemFire 세션 처리에서 응답 지연이 발생했습니다.",
+      "analysis": "로그 수집 지연과 메트릭 경로를 점검하고 Thread dump로 GemFire registerInterest 구간의 경합을 확인했습니다.",
+      "actions": [
+        "로그 수집 파이프라인 용량 및 메트릭 수집 간격 조정",
+        "GemFire Subscription 설정의 필요성과 경합 분석",
+        "불필요한 Subscription을 해제한 후 부하 테스트 재수행"
+      ],
+      "outcome": "포트폴리오의 테스트 조건에서 Subscription 조정 후 1,600 TPS 이상의 부하에서도 해당 스레드 경합과 지연이 나타나지 않았습니다. 초기 캐시 과다 설정은 이후 Log Cache 최적화에서 재조정했습니다."
+    }
   ]
 }
