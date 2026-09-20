@@ -28,6 +28,8 @@ spec:
         - maxSkew: 1
           topologyKey: kubernetes.io/hostname
           whenUnsatisfiable: DoNotSchedule
+          # Exclude the tainted control-plane node from worker workload spreading.
+          nodeTaintsPolicy: Honor
           labelSelector:
             matchLabels: {app: resume-api}
       containers:
@@ -96,6 +98,8 @@ spec:
         - maxSkew: 1
           topologyKey: kubernetes.io/hostname
           whenUnsatisfiable: DoNotSchedule
+          # Exclude the tainted control-plane node from worker workload spreading.
+          nodeTaintsPolicy: Honor
           labelSelector:
             matchLabels: {app: resume-web}
       containers:
