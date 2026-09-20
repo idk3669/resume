@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 # 김진현 · Resume Platform
 
 React + Vite / Nginx / FastAPI로 구성한 읽기 전용 이력서 서비스입니다.
@@ -110,3 +111,6 @@ bash scripts/verify-rbac.sh
 - https://kubernetes.io/docs/tasks/manage-kubernetes-objects/kustomization/
 - https://kubernetes.io/docs/concepts/security/service-accounts/
 - https://kubernetes.io/docs/concepts/services-networking/network-policies/
+=======
+# resume
+>>>>>>> origin/main
