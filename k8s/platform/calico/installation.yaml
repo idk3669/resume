@@ -1,0 +1,18 @@
+# Calico v3.32.2 installation settings for the local kubeadm cluster.
+# This must match kubeadm init --pod-network-cidr=10.244.0.0/16.
+apiVersion: operator.tigera.io/v1
+kind: Installation
+metadata:
+  name: default
+spec:
+  calicoNetwork:
+    # VMware NAT does not advertise Pod CIDRs to an upstream router.
+    # VXLAN carries Pod-to-Pod traffic between node IPs instead.
+    bgp: Disabled
+    ipPools:
+      - name: default-ipv4-ippool
+        blockSize: 26
+        cidr: 10.244.0.0/16
+        encapsulation: VXLAN
+        natOutgoing: Enabled
+        nodeSelector: all()

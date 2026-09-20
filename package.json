@@ -1,0 +1,14 @@
+{
+  "name": "jinhyun-resume-platform",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "packageManager": "pnpm@10.11.0",
+  "scripts": {
+    "dev": "vite web --host 127.0.0.1 --port 5173 --strictPort",
+    "build": "vite build web",
+    "preview": "vite preview web --host 127.0.0.1 --port 5173 --strictPort"
+  },
+  "dependencies": {"react": "19.1.1", "react-dom": "19.1.1"},
+  "devDependencies": {"vite": "7.1.3"}
+}

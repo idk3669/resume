@@ -1,0 +1,17 @@
+node_modules/
+web/dist/
+.venv/
+__pycache__/
+*.pyc
+.env
+*.tar
+*.tgz
+*.zip
+*.pdf
+*.pem
+*.key
+.env.*
+!.env.example
+kubeconfig*
+admin.conf
+test-results/

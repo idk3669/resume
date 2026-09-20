@@ -1,0 +1,13 @@
+# The proxy service is the only NodePort in the final local environment.
+# The application Services remain ClusterIP-only.
+apiVersion: gateway.envoyproxy.io/v1alpha1
+kind: EnvoyProxy
+metadata:
+  name: resume-edge
+  namespace: envoy-gateway-system
+spec:
+  provider:
+    type: Kubernetes
+    kubernetes:
+      envoyService:
+        type: NodePort

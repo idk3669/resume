@@ -1,0 +1,50 @@
+apiVersion: argoproj.io/v1alpha1
+kind: AppProject
+metadata:
+  name: resume
+  namespace: argocd
+spec:
+  sourceRepos:
+    - https://github.com/idk3669/resume.git
+  destinations:
+    - server: https://kubernetes.default.svc
+      namespace: resume
+  clusterResourceWhitelist:
+    - group: ''
+      kind: Namespace
+  namespaceResourceWhitelist:
+    - group: ''
+      kind: ServiceAccount
+    - group: ''
+      kind: ConfigMap
+    - group: ''
+      kind: Service
+    - group: apps
+      kind: Deployment
+    - group: rbac.authorization.k8s.io
+      kind: Role
+    - group: rbac.authorization.k8s.io
+      kind: RoleBinding
+    - group: networking.k8s.io
+      kind: NetworkPolicy
+    - group: policy
+      kind: PodDisruptionBudget
+---
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: resume
+  namespace: argocd
+spec:
+  project: resume
+  source:
+    repoURL: https://github.com/idk3669/resume.git
+    targetRevision: deploy
+    path: k8s
+  destination:
+    server: https://kubernetes.default.svc
+    namespace: resume
+  # Enable automation after the first manual sync and Gateway verification.
+  syncPolicy:
+    syncOptions:
+      - CreateNamespace=true
