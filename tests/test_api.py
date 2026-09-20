@@ -23,6 +23,12 @@ class ApiTests(unittest.TestCase):
             self.assertEqual(sum(p['collection'] == 'projects' for p in projects), 8)
             self.assertEqual(sum(p['collection'] == 'portfolio' for p in projects), 7)
             self.assertEqual(resume['highlights'], [])
+            cf = next(p for p in projects if p['id'] == 'cf-push')
+            self.assertEqual(len(cf['sections']), 18)
+            figures = [image for section in cf['sections'] for image in section['images']]
+            self.assertEqual(len(figures), 12)
+            for image in figures:
+                self.assertTrue((DATA.parents[1] / 'web/public' / image['src'].lstrip('/')).is_file())
             maintenance = next(p for p in projects if p['id'] == 'nh-maintenance')
             self.assertEqual(maintenance['client'], 'NH농협은행 / 농협중앙회')
             self.assertIn('NH 내부 세미나 발표 3회 진행', str(maintenance['sections']))

@@ -45,9 +45,15 @@ class Credential(StrictModel):
     name: str
     detail: str
 
+class ProjectImage(StrictModel):
+    src: str = Field(pattern=r'^/portfolio/[a-z0-9/-]+\.png$')
+    alt: str
+    caption: str
+
 class ProjectSection(StrictModel):
     title: str
     lines: list[str]
+    images: list[ProjectImage] = Field(default_factory=list)
 
 class Project(StrictModel):
     id: str = Field(pattern=r'^[a-z0-9-]+$')

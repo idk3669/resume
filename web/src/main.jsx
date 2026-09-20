@@ -14,7 +14,7 @@ function InlineText({text}) {
     part.startsWith('`') ? <code key={i}>{part.slice(1, -1)}</code> : part);
 }
 
-function DetailSection({section}) {
+function DetailSection({section, anchor}) {
   const blocks = [];
   for (const line of section.lines) {
     const bullet = line.match(/^(\s*)- (.*)$/);
@@ -30,9 +30,9 @@ function DetailSection({section}) {
       groups.at(-1).push(block);
     } else groups.push(block);
   }
-  return <section className="project-detail-section"><h3>{section.title}</h3>{groups.map((group, i) => Array.isArray(group)
+  return <section id={anchor} className="project-detail-section"><h3>{section.title}</h3>{groups.map((group, i) => Array.isArray(group)
     ? <ul className="detail-list" key={i}>{group.map((item, j) => <li key={j}><strong><InlineText text={item.text}/></strong>{item.items.length > 0 && <ul>{item.items.map((text, k) => <li key={k}><InlineText text={text}/></li>)}</ul>}</li>)}</ul>
-    : <p key={i}><InlineText text={group.text}/></p>)}</section>;
+    : <p key={i}><InlineText text={group.text}/></p>)}{section.images?.map(image => <figure className="detail-figure" key={image.src}><a href={image.src} target="_blank" rel="noopener noreferrer" aria-label={`${image.alt} 원본 이미지 새 탭에서 보기`}><img src={image.src} alt={image.alt} loading="lazy"/></a><figcaption>{image.caption}<span>이미지를 누르면 원본 크기로 볼 수 있습니다 ↗</span></figcaption></figure>)}</section>;
 }
 
 function ProjectDialog({id, onClose}) {
@@ -64,7 +64,8 @@ function ProjectDialog({id, onClose}) {
         <h3 className="stack-label">사용 기술 스택</h3>
         <div className="tags">{project.tags.map(tag => <span key={tag}>{tag}</span>)}</div>
         <p className="result-banner">{project.result}</p>
-        {project.sections?.length ? project.sections.map((section, i) => <DetailSection key={i} section={section}/>) : <>
+        {project.sections?.length > 6 && <details className="detail-toc"><summary>목차 · {project.sections.length}개 항목</summary><nav aria-label="상세 내용 목차">{project.sections.map((section, i) => <a key={i} href={`#detail-section-${i}`} onClick={event => {event.preventDefault(); document.getElementById(`detail-section-${i}`)?.scrollIntoView({block:'start'});}}>{section.title}</a>)}</nav></details>}
+        {project.sections?.length ? project.sections.map((section, i) => <DetailSection key={i} anchor={`detail-section-${i}`} section={section}/>) : <>
         <section><h3>01 · 상황</h3><p>{project.context}</p></section>
         <section><h3>02 · 분석</h3><p>{project.analysis}</p></section>
         <section><h3>03 · 조치</h3><ul>{project.actions.map(action => <li key={action}>{action}</li>)}</ul></section>
