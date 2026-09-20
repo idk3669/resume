@@ -1,0 +1,126 @@
+apiVersion: argoproj.io/v1alpha1
+kind: AppProject
+metadata:
+  name: monitoring
+  namespace: argocd
+spec:
+  description: Cluster observability components managed from declarative sources.
+  sourceRepos:
+    - https://github.com/rancher/local-path-provisioner.git
+    - https://prometheus-community.github.io/helm-charts
+  destinations:
+    - server: https://kubernetes.default.svc
+      namespace: local-path-storage
+    - server: https://kubernetes.default.svc
+      namespace: monitoring
+  # The provisioner and Prometheus Operator create storage, RBAC and CRD resources.
+  clusterResourceWhitelist:
+    - group: '*'
+      kind: '*'
+  namespaceResourceWhitelist:
+    - group: '*'
+      kind: '*'
+---
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: local-path-provisioner
+  namespace: argocd
+  annotations:
+    argocd.argoproj.io/sync-wave: "0"
+spec:
+  project: monitoring
+  source:
+    repoURL: https://github.com/rancher/local-path-provisioner.git
+    targetRevision: v0.0.37
+    path: deploy
+  destination:
+    server: https://kubernetes.default.svc
+    namespace: local-path-storage
+  syncPolicy:
+    automated:
+      prune: true
+      selfHeal: true
+    syncOptions:
+      - CreateNamespace=true
+      - ServerSideApply=true
+---
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: monitoring
+  namespace: argocd
+  annotations:
+    argocd.argoproj.io/sync-wave: "1"
+spec:
+  project: monitoring
+  source:
+    repoURL: https://prometheus-community.github.io/helm-charts
+    chart: kube-prometheus-stack
+    targetRevision: 89.2.0
+    helm:
+      releaseName: monitoring
+      values: |
+        defaultRules:
+          create: true
+        alertmanager:
+          enabled: false
+        kubeEtcd:
+          enabled: false
+        kubeControllerManager:
+          enabled: false
+        kubeScheduler:
+          enabled: false
+        prometheusOperator:
+          resources:
+            requests: {cpu: 100m, memory: 192Mi}
+            limits: {cpu: 500m, memory: 512Mi}
+        kube-state-metrics:
+          resources:
+            requests: {cpu: 50m, memory: 96Mi}
+            limits: {cpu: 250m, memory: 192Mi}
+        prometheus-node-exporter:
+          resources:
+            requests: {cpu: 30m, memory: 48Mi}
+            limits: {cpu: 150m, memory: 96Mi}
+        grafana:
+          admin:
+            existingSecret: monitoring-grafana-admin
+            userKey: admin-user
+            passwordKey: admin-password
+          service:
+            type: NodePort
+            nodePort: 30300
+          persistence:
+            enabled: true
+            type: pvc
+            storageClassName: local-path
+            accessModes: [ReadWriteOnce]
+            size: 2Gi
+          resources:
+            requests: {cpu: 50m, memory: 128Mi}
+            limits: {cpu: 300m, memory: 384Mi}
+        prometheus:
+          prometheusSpec:
+            retention: 3d
+            resources:
+              requests: {cpu: 250m, memory: 768Mi}
+              limits: {cpu: "1", memory: 1536Mi}
+            storageSpec:
+              volumeClaimTemplate:
+                spec:
+                  storageClassName: local-path
+                  accessModes: [ReadWriteOnce]
+                  resources:
+                    requests:
+                      storage: 10Gi
+  destination:
+    server: https://kubernetes.default.svc
+    namespace: monitoring
+  syncPolicy:
+    automated:
+      prune: true
+      selfHeal: true
+    syncOptions:
+      - CreateNamespace=true
+      - ServerSideApply=true

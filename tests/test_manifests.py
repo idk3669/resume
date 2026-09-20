@@ -5,6 +5,17 @@ import yaml
 
 ROOT = Path(__file__).resolve().parents[1]
 class ManifestTests(unittest.TestCase):
+
+    def test_monitoring_is_pinned_and_internal(self):
+        path = Path(__file__).resolve().parents[1] / 'k8s/platform/argocd/monitoring-applications.yaml'
+        documents = list(yaml.safe_load_all(path.read_text(encoding='utf-8')))
+        apps = {item['metadata']['name']: item for item in documents if item['kind'] == 'Application'}
+        self.assertEqual(apps['local-path-provisioner']['spec']['source']['targetRevision'], 'v0.0.37')
+        values = apps['monitoring']['spec']['source']['helm']['values']
+        self.assertIn('targetRevision: 89.2.0', path.read_text(encoding='utf-8'))
+        self.assertIn('nodePort: 30300', values)
+        self.assertIn('retention: 3d', values)
+        self.assertIn('storage: 10Gi', values)
     def test_workload_security_and_services(self):
         docs = []
         for path in (ROOT / 'k8s').glob('*.yaml'):
