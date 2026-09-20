@@ -20,6 +20,9 @@ class ApiTests(unittest.TestCase):
             self.assertNotIn('projects', resume)
             projects = client.get('/api/projects').json()
             self.assertEqual(len(projects), 15)
+            self.assertEqual(sum(p['collection'] == 'projects' for p in projects), 8)
+            self.assertEqual(sum(p['collection'] == 'portfolio' for p in projects), 7)
+            self.assertEqual(resume['highlights'], [])
             maintenance = next(p for p in projects if p['id'] == 'nh-maintenance')
             self.assertEqual(maintenance['client'], 'NH농협은행 / 농협중앙회')
             self.assertIn('NH 내부 세미나 발표 3회 진행', str(maintenance['sections']))
@@ -43,7 +46,7 @@ class ApiTests(unittest.TestCase):
         source['projects'][1]['id'] = source['projects'][0]['id']
         invalids.append(json.dumps(source))
         source = json.loads(DATA.read_text(encoding='utf-8'))
-        source['highlights'][0]['projectId'] = 'nonexistent'
+        source['highlights'] = [{'value': '1', 'unit': '', 'label': 'test', 'detail': '', 'projectId': 'nonexistent'}]
         invalids.append(json.dumps(source))
         with tempfile.TemporaryDirectory() as temp:
             path = Path(temp) / 'data.json'

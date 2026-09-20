@@ -65,6 +65,8 @@ class Project(StrictModel):
     contractor: str = ''
     role: str = ''
     sections: list[ProjectSection] = Field(default_factory=list)
+    collection: str = 'projects'
+    sourcePages: str = ''
 
 class Resume(StrictModel):
     profile: Profile
