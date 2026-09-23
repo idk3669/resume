@@ -50,6 +50,17 @@ class ApiTests(unittest.TestCase):
                 self.assertEqual(client.get('/api/projects/' + project['id']).json(), project)
             self.assertEqual(client.get('/api/projects/missing').status_code, 404)
 
+    def test_career_details(self):
+        with TestClient(create_app(DATA)) as client:
+            resume = client.get('/api/resume').json()
+            job = resume['career'][0]
+            self.assertEqual(job['company'], '데이타솔루션')
+            self.assertEqual(job['position'], 'PaaS Platform 엔지니어')
+            self.assertEqual(job['period'], '2021.09.06 ~ 2026.05.15')
+            self.assertEqual(len(job['bullets']), 11)
+            self.assertIn('UAAC', ' '.join(job['bullets']))
+            self.assertIn('Private AI 연동 MLOps 플랫폼 테스트 진행', job['bullets'][-1])
+
     def test_write_methods_denied(self):
         with TestClient(create_app(DATA)) as client:
             for path in ['/api/resume', '/api/projects', '/api/projects/nh-card']:
