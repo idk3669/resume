@@ -31,9 +31,17 @@ class ApiTests(unittest.TestCase):
                 self.assertTrue((DATA.parents[1] / 'web/public' / image['src'].lstrip('/')).is_file())
             maintenance = next(p for p in projects if p['id'] == 'nh-maintenance')
             self.assertEqual(maintenance['client'], 'NH농협은행 / 농협중앙회')
-            self.assertIn('NH 내부 세미나 발표 3회 진행', str(maintenance['sections']))
+            self.assertIn('장애 사례 분석 및 사내 세미나 발표', str(maintenance['sections']))
+            self.assertNotIn('NH 내부 세미나 발표 3회 진행', str(maintenance['sections']))
             card = next(p for p in projects if p['id'] == 'nh-card')
-            self.assertIn('본인 기여도', [s['title'] for s in card['sections']])
+            self.assertEqual([s['title'] for s in card['sections']], ['프로젝트 개요', '주요 수행 내용 및 성과'])
+            expected_counts = {'nh-maintenance': 8, 'nh-card': 7, 'nh-central-development': 8,
+                               'allone-aws-dr': 7, 'kb-life-dr': 6, 'nh-information': 4, 'nh-elk': 3}
+            for item in projects:
+                if item['id'] in expected_counts:
+                    self.assertEqual(len(item['sections']), 2)
+                    headings = [line for line in item['sections'][1]['lines'] if line.startswith('- **')]
+                    self.assertEqual(len(headings), expected_counts[item['id']])
             for project in projects:
                 self.assertEqual(client.get('/api/projects/' + project['id']).json(), project)
             self.assertEqual(client.get('/api/projects/missing').status_code, 404)
@@ -45,6 +53,37 @@ class ApiTests(unittest.TestCase):
                     with self.subTest(path=path, method=method):
                         self.assertEqual(client.request(method, path, json={}).status_code, 405)
             self.assertEqual(client.get('/api/resume').json()['profile']['name'], '김진현')
+
+    def test_portfolio_rich_content_and_assets(self):
+        data = json.loads(DATA.read_text(encoding='utf-8'))
+        with TestClient(create_app(DATA)) as client:
+            for project in data['projects']:
+                if project['id'] not in ['rabbitmq', 'routing', 'gemfire-ha', 'marketing-performance', 'allone', 'log-cache']:
+                    continue
+                response = client.get('/api/projects/' + project['id'])
+                self.assertEqual(response.status_code, 200)
+                blocks = [b for s in response.json()['sections'] for b in s['blocks']]
+                self.assertTrue(any(b['type'] == 'text' for b in blocks))
+                self.assertTrue(any(b['type'] == 'image' for b in blocks))
+                for block in blocks:
+                    if block['type'] == 'image':
+                        path = DATA.parents[1] / 'web/public' / block['image']['src'].lstrip('/')
+                        self.assertTrue(path.is_file(), str(path))
+                    if block['type'] == 'table':
+                        self.assertTrue(all(len(r) == len(block['headers']) for r in block['rows']))
+
+    def test_log_cache_flow_is_last_and_calculation_is_explicit(self):
+        with TestClient(create_app(DATA)) as client:
+            project = client.get('/api/projects/log-cache').json()
+            self.assertEqual(project['title'], '플랫폼 VM 리소스 최적화')
+            self.assertEqual(len(project['sections']), 9)
+            final = project['sections'][-1]
+            self.assertEqual(final['title'], '로그 처리 흐름도')
+            self.assertEqual(final['blocks'][0]['type'], 'image')
+            self.assertEqual(final['blocks'][0]['image']['src'], '/portfolio/log-cache/log-processing-flow.png')
+            text = json.dumps(project, ensure_ascii=False)
+            self.assertIn('9,135,000', text)
+            self.assertIn('근거 확인이 필요', text)
 
     def test_missing_invalid_and_bad_references_stay_unready(self):
         invalids = ['{', '{}']

@@ -9,8 +9,9 @@ async function getJSON(path, signal) {
 }
 
 function InlineText({text}) {
-  return text.split(/(\*\*.*?\*\*|`[^`]+`)/g).map((part, i) =>
+  return text.split(/(\*\*.*?\*\*|`[^`]+`|~~.*?~~)/g).map((part, i) =>
     part.startsWith('**') ? <strong key={i}>{part.slice(2, -2)}</strong> :
+    part.startsWith('~~') ? <del key={i}>{part.slice(2, -2)}</del> :
     part.startsWith('`') ? <code key={i}>{part.slice(1, -1)}</code> : part);
 }
 
@@ -19,6 +20,16 @@ function SectionImages({images = []}) {
 }
 
 function DetailSection({section, anchor}) {
+  if (section.blocks?.length) return <section id={anchor} className="project-detail-section">
+    <h3>{section.title}</h3>
+    {section.blocks.map((block, i) => {
+      if (block.type === 'image') return <SectionImages key={i} images={[block.image]}/>;
+      if (block.type === 'code') return <pre className="detail-code" key={i} tabIndex={0} aria-label={`${section.title} 코드 예시`}><code>{block.text}</code></pre>;
+      if (block.type === 'table') return <div className="detail-table-scroll" key={i} tabIndex={0} role="region" aria-label={`${section.title} 표`}><table className="detail-table"><thead><tr>{block.headers.map((cell, j) => <th key={j} scope="col"><InlineText text={cell}/></th>)}</tr></thead><tbody>{block.rows.map((row, j) => <tr key={j}>{row.map((cell, k) => <td key={k}><InlineText text={cell}/></td>)}</tr>)}</tbody></table></div>;
+      const bullet = block.text.match(/^(\s*)(?:- |(\d+)\. )(.*)$/);
+      return bullet ? <p className={`detail-bullet ${bullet[1].length ? 'nested' : ''}`} key={i}><span aria-hidden="true">{bullet[2] ? `${bullet[2]}.` : '•'}</span><InlineText text={bullet[3]}/></p> : <p key={i}><InlineText text={block.text}/></p>;
+    })}
+  </section>;
   const blocks = [];
   for (const line of section.lines) {
     const bullet = line.match(/^(\s*)- (.*)$/);
@@ -91,6 +102,14 @@ const covers = {
   'log-cache': ['OBSERVABILITY', 'Log Pipeline · Resource Tuning'],
 };
 
+function portfolioThumbnail(project) {
+  for (const section of project.sections || []) {
+    const image = section.blocks?.find(block => block.type === 'image')?.image || section.images?.[0];
+    if (image) return image;
+  }
+  return null;
+}
+
 function ProjectCollection({items, portfolio = false, onSelect}) {
   const [filter, setFilter] = useState('전체');
   const categories = ['전체', ...new Set(items.map(p => p.category))];
@@ -101,10 +120,10 @@ function ProjectCollection({items, portfolio = false, onSelect}) {
     <div className="collection-label">{portfolio ? '▦ 포트폴리오 갤러리' : '▤ 프로젝트 내역'} <span>{items.length}</span></div>
     <div className="filters" role="group" aria-label={`${title} 분류`}>{categories.map(category => <button key={category} aria-pressed={category === filter} onClick={() => setFilter(category)}>{category}</button>)}</div>
     <div className={portfolio ? 'portfolio-grid' : 'project-grid'}>{visible.map(project => <article className={`project-card ${portfolio ? 'portfolio-card' : ''}`} key={project.id}>
-      {portfolio && <button className={`portfolio-cover cover-${project.id}`} onClick={() => onSelect(project.id)} aria-label={`${project.title} 상세 보기`}><span className="cover-kicker">ENGINEERING CASE STUDY</span><strong>{covers[project.id]?.[0]}</strong><span>{covers[project.id]?.[1]}</span><span className="cover-art" aria-hidden="true">◇ ─ ◇ ─ ◇</span></button>}
+      {portfolio && <button className={`portfolio-cover cover-${project.id} ${portfolioThumbnail(project) ? 'has-thumbnail' : ''}`} onClick={() => onSelect(project.id)} aria-label={`${project.title} 상세 보기`}>{portfolioThumbnail(project) ? <><img className="portfolio-thumbnail" src={portfolioThumbnail(project).src} alt={portfolioThumbnail(project).alt} loading="lazy"/><span className="thumbnail-label">{covers[project.id]?.[0]} · 상세 보기 ↗</span></> : <><span className="cover-kicker">ENGINEERING CASE STUDY</span><strong>{covers[project.id]?.[0]}</strong><span>{covers[project.id]?.[1]}</span><span className="cover-art" aria-hidden="true">◇ ─ ◇ ─ ◇</span></>}</button>}
       <div className="project-card-body"><div className="project-top"><span>{project.category}</span></div><h3><button className="project-title" onClick={() => onSelect(project.id)}>{project.title}<span aria-hidden="true">↗</span></button></h3><p>{project.subtitle}</p><div className="tags">{project.tags.slice(0, 3).map(tag => <span key={tag}>{tag}</span>)}{project.tags.length > 3 && <span>+{project.tags.length - 3}</span>}</div><p className="card-period">{project.period}</p><div className="project-result">{project.result}</div></div>
     </article>)}</div>
-    {portfolio && <p className="source-note">포트폴리오 PDF의 7개 사례를 기준으로 정리했습니다. 성능 수치와 제품 버전은 당시 테스트·운영 환경 기준입니다.</p>}
+    {portfolio && <p className="source-note">직접 정리한 분석 문서와 원본 이미지로 구성한 7개 사례입니다. 성능 수치와 제품 버전, 조치 방안은 당시 테스트·운영 환경 기준입니다.</p>}
   </section>;
 }
 

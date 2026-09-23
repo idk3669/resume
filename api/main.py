@@ -2,6 +2,7 @@
 from contextlib import asynccontextmanager
 import logging
 import os
+from typing import Literal
 from pathlib import Path
 from fastapi import FastAPI, HTTPException
 from pydantic import BaseModel, ConfigDict, Field, model_validator
@@ -46,15 +47,34 @@ class Credential(StrictModel):
     detail: str
 
 class ProjectImage(StrictModel):
-    src: str = Field(pattern=r'^/portfolio/[a-z0-9/-]+\.png$')
+    src: str = Field(pattern=r'^/portfolio/[a-z0-9/-]+\.(png|jpg)$')
     alt: str
     caption: str
+
+class TextBlock(StrictModel):
+    type: Literal['text']
+    text: str
+
+class CodeBlock(StrictModel):
+    type: Literal['code']
+    text: str
+    language: str = ''
+
+class TableBlock(StrictModel):
+    type: Literal['table']
+    headers: list[str]
+    rows: list[list[str]]
+
+class ImageBlock(StrictModel):
+    type: Literal['image']
+    image: ProjectImage
 
 class ProjectSection(StrictModel):
     title: str
     lines: list[str]
     images: list[ProjectImage] = Field(default_factory=list)
     imageFirst: bool = False
+    blocks: list[TextBlock | CodeBlock | TableBlock | ImageBlock] = Field(default_factory=list)
 
 class Project(StrictModel):
     id: str = Field(pattern=r'^[a-z0-9-]+$')
