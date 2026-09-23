@@ -15,7 +15,7 @@ configMapGenerator:
 images:
 - name: resume-web
   newName: ghcr.io/idk3669/resume-web
-  digest: sha256:9e4e30534d02a91127ced67500aeb30bec354959969ea93a8d9c17c9a7745489
+  digest: sha256:07faef91afc5366fb1cb2c818243f4156af5755faed4edb8d8c4675fcc0badd1
 - name: resume-api
   newName: ghcr.io/idk3669/resume-api
-  digest: sha256:250e37076cc0c95b8484f7355578e8b7673fd1863a43e4cfcf1968de2ec2c1f2
+  digest: sha256:175d70bb8ed822b5c7dc026c0154b30498c015265306c6486c49a86ddbf1646b
