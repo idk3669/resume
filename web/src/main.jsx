@@ -1,6 +1,7 @@
 import React, {useEffect, useRef, useState} from 'react';
 import {createRoot} from 'react-dom/client';
 import './styles.css';
+import JobsApp from './jobs/JobsApp.jsx';
 
 async function getJSON(path, signal) {
   const response = await fetch(path, {signal});
@@ -145,7 +146,7 @@ function App() {
   const {profile, skills, career, education, certifications} = data;
   return <>
     <a className="skip" href="#main">본문 바로가기</a>
-    <header className="site-header"><a className="brand" href="#main" aria-label="김진현 홈"><span className="monogram small">JK</span><span>{profile.name}<span className="brand-sub"> / Cloud Engineer</span></span></a><nav aria-label="주요 메뉴"><a href="#projects">프로젝트 내역</a><a href="#portfolio">포트폴리오</a><a href="#experience">경력</a><a href="#credentials">학력·자격</a><a className="nav-contact" href={`mailto:${profile.email}`}>연락하기 ↗</a></nav></header>
+    <header className="site-header"><a className="brand" href="#main" aria-label="김진현 홈"><span className="monogram small">JK</span><span>{profile.name}<span className="brand-sub"> / Cloud Engineer</span></span></a><nav aria-label="주요 메뉴"><a href="#projects">프로젝트 내역</a><a href="#portfolio">포트폴리오</a><a href="#experience">경력</a><a href="#credentials">학력·자격</a><a href="/jobs">회사 찾기 ↗</a><a className="nav-contact" href={`mailto:${profile.email}`}>연락하기 ↗</a></nav></header>
     <main id="main">
       <section className="hero hero-resume" aria-labelledby="hero-title">
         <div className="hero-copy"><p className="eyebrow">{profile.englishName} / CLOUD ENGINEER</p><h1 id="hero-title">금융 서비스를 지탱하는<br/><span className="hero-accent">클라우드 엔지니어 {profile.name}입니다.</span></h1><p className="hero-intro">{profile.intro}</p><div className="hero-actions"><a className="button" href="#projects">프로젝트 살펴보기 <span aria-hidden="true">↗</span></a><a className="text-link" href="#portfolio">포트폴리오 보기 <span aria-hidden="true">→</span></a></div></div>
@@ -161,4 +162,5 @@ function App() {
     {selected && <ProjectDialog id={selected} onClose={() => setSelected(null)} />}
   </>;
 }
-createRoot(document.getElementById('root')).render(<React.StrictMode><App/></React.StrictMode>);
+const jobsRoute = /^\/jobs(?:\/|$)/.test(window.location.pathname);
+createRoot(document.getElementById('root')).render(<React.StrictMode>{jobsRoute ? <JobsApp/> : <App/>}</React.StrictMode>);
