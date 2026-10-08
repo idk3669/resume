@@ -26,3 +26,10 @@ test('multiple filters combine and profile edits change evidence', () => {
   assert.equal(selectJobs(demoJobs,{},'all',{...emptyFilters,query:'TAS',region:'경기'},initialProfile).length,0);
   assert.equal(matchJob(demoJobs[0],{...initialProfile,professional:''}).work.length,0);
 });
+test('inactive postings remain accessible in closed and saved tabs, not the active board', () => {
+  const rows=[{...demoJobs[0],active:false}];
+  const statuses={[rows[0].id]:'saved'};
+  assert.equal(selectJobs(rows,statuses,'all',emptyFilters,initialProfile).length,0);
+  assert.equal(selectJobs(rows,statuses,'closed',emptyFilters,initialProfile).length,1);
+  assert.equal(selectJobs(rows,statuses,'saved',emptyFilters,initialProfile).length,1);
+});

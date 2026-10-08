@@ -5,3 +5,9 @@
 web/dist
 test-results
 docs
+.career
+.env
+.env.*
+*.db
+*.db-wal
+*.db-shm

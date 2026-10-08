@@ -25,7 +25,8 @@ export function matchJob(job, profile) {
 export function selectJobs(jobs, statuses, tab, filters, profile) {
   const results = jobs.filter(job => {
     const status = statuses[job.id] || 'new';
-    if (tab === 'all' ? status === 'excluded' : status !== tab) return false;
+    if (tab === 'closed') {if (job.active !== false) return false;}
+    else if (tab === 'all' ? status === 'excluded' || job.active === false : status !== tab) return false;
     if (filters.query && !`${job.company} ${job.title} ${job.description}`.toLowerCase().includes(filters.query.trim().toLowerCase())) return false;
     if (filters.role && job.role !== filters.role) return false;
     if (filters.region && job.region !== filters.region) return false;

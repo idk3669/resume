@@ -21,13 +21,16 @@ class ManifestTests(unittest.TestCase):
         for path in (ROOT / 'k8s').glob('*.yaml'):
             docs.extend(d for d in yaml.safe_load_all(path.read_text()) if d)
         deployments = [d for d in docs if d['kind'] == 'Deployment']
-        self.assertEqual(len(deployments), 2)
+        self.assertEqual(len(deployments), 3)
         for deployment in deployments:
             pod = deployment['spec']['template']['spec']
             self.assertEqual(pod['serviceAccountName'], 'service-resume')
             self.assertFalse(pod['automountServiceAccountToken'])
             self.assertTrue(pod['securityContext']['runAsNonRoot'])
-            self.assertEqual(deployment['spec']['replicas'], 2)
+            career = deployment['metadata']['name'] == 'career-api'
+            self.assertEqual(deployment['spec']['replicas'], 1 if career else 2)
+            if career:
+                self.assertEqual(deployment['spec']['strategy']['type'], 'Recreate')
             for container in pod['containers']:
                 self.assertTrue(container['securityContext']['readOnlyRootFilesystem'])
                 self.assertFalse(container['securityContext']['allowPrivilegeEscalation'])
@@ -48,6 +51,15 @@ class ManifestTests(unittest.TestCase):
         config = yaml.safe_load((ROOT / 'compose.yaml').read_text())
         self.assertNotIn('ports', config['services']['resume-api'])
         self.assertTrue(config['services']['resume-web']['read_only'])
+        self.assertNotIn('ports', config['services']['career-api'])
+        self.assertTrue(config['services']['career-api']['read_only'])
+
+    def test_career_pvc_allowed_and_retained(self):
+        docs = list(yaml.safe_load_all((ROOT / 'k8s/career.yaml').read_text(encoding='utf-8')))
+        pvc = next(d for d in docs if d['kind'] == 'PersistentVolumeClaim')
+        self.assertIn('Prune=false',pvc['metadata']['annotations']['argocd.argoproj.io/sync-options'])
+        project = next(d for d in yaml.safe_load_all((ROOT / 'k8s/platform/argocd/application.yaml').read_text()) if d['kind'] == 'AppProject')
+        self.assertIn({'group':'','kind':'PersistentVolumeClaim'},project['spec']['namespaceResourceWhitelist'])
 
 if __name__ == '__main__':
     unittest.main()

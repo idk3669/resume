@@ -8,6 +8,7 @@ resources:
   - services.yaml
   - policies.yaml
   - pdb.yaml
+  - career.yaml
 configMapGenerator:
   - name: resume-data
     files:

@@ -55,7 +55,7 @@ class ApiTests(unittest.TestCase):
             resume = client.get('/api/resume').json()
             job = resume['career'][0]
             self.assertEqual(job['company'], '데이타솔루션')
-            self.assertEqual(job['position'], 'PaaS Platform 엔지니어')
+            self.assertEqual(job['position'], 'PaaS Platform 엔지니어 · 선임')
             self.assertEqual(job['period'], '2021.09.06 ~ 2026.05.15')
             self.assertEqual(len(job['bullets']), 11)
             self.assertIn('UAAC', ' '.join(job['bullets']))
@@ -97,8 +97,10 @@ class ApiTests(unittest.TestCase):
             self.assertEqual(final['blocks'][0]['type'], 'image')
             self.assertEqual(final['blocks'][0]['image']['src'], '/portfolio/log-cache/log-processing-flow.png')
             text = json.dumps(project, ensure_ascii=False)
-            self.assertIn('9,135,000', text)
-            self.assertIn('근거 확인이 필요', text)
+            self.assertNotIn('9,135,000', text)
+            self.assertIn('8,400 × 5 = 42,000', text)
+            self.assertIn('12,600,000', text)
+            self.assertIn('거래 집중일', text)
 
     def test_missing_invalid_and_bad_references_stay_unready(self):
         invalids = ['{', '{}']

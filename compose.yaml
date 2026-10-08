@@ -15,6 +15,29 @@ services:
       interval: 10s
       timeout: 3s
       retries: 3
+  career-api:
+    build:
+      context: .
+      dockerfile: api/Dockerfile
+    image: resume-api:1.0.0
+    command: [uvicorn, api.career:app, --host, 0.0.0.0, --port, '8000', --workers, '1', --no-proxy-headers, --no-access-log]
+    read_only: true
+    cap_drop: [ALL]
+    security_opt: [no-new-privileges:true]
+    tmpfs: [/tmp]
+    environment:
+      CAREER_DB_PATH: /home/appuser/career/career.db
+      CAREER_PASSWORD_HASH: ${CAREER_PASSWORD_HASH:-}
+      CAREER_ALLOWED_ORIGINS: ${CAREER_ALLOWED_ORIGINS:-http://localhost:8080,http://127.0.0.1:8080}
+      CAREER_COOKIE_SECURE: ${CAREER_COOKIE_SECURE:-false}
+      KAKAO_REST_API_KEY: ${KAKAO_REST_API_KEY:-}
+    volumes:
+      - career-data:/home/appuser/career
+    healthcheck:
+      test: [CMD, python, -c, "import urllib.request; urllib.request.urlopen('http://127.0.0.1:8000/health/ready')"]
+      interval: 10s
+      timeout: 3s
+      retries: 3
   resume-web:
     build:
       context: .
@@ -28,8 +51,12 @@ services:
     depends_on:
       resume-api:
         condition: service_healthy
+      career-api:
+        condition: service_healthy
     healthcheck:
       test: [CMD, wget, -q, -O, /dev/null, "http://127.0.0.1:8080/health/ready"]
       interval: 10s
       timeout: 3s
       retries: 3
+volumes:
+  career-data:
