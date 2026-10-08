@@ -19,6 +19,8 @@ spec:
       kind: ConfigMap
     - group: ''
       kind: Service
+    - group: ''
+      kind: PersistentVolumeClaim
     - group: apps
       kind: Deployment
     - group: rbac.authorization.k8s.io

@@ -8,6 +8,7 @@ resources:
 - services.yaml
 - policies.yaml
 - pdb.yaml
+- career.yaml
 configMapGenerator:
 - name: resume-data
   files:
@@ -15,7 +16,7 @@ configMapGenerator:
 images:
 - name: resume-web
   newName: ghcr.io/idk3669/resume-web
-  digest: sha256:9f9f0eeb0a1b2d8567f12c1b9550aaf8f4088ee4f22702534772eed216f000da
+  digest: sha256:c83e6e6955b2a57b2a5cd89a6494dac31e94164166878be7ef916007e0765ffb
 - name: resume-api
   newName: ghcr.io/idk3669/resume-api
-  digest: sha256:9e4ff8755f1b7c47f1dd70db973a113172e768e5eb63cb4b40f58bb574fb4a66
+  digest: sha256:fc65a0a5394fce69c25149ee92ab626815ce3f5af3e9b98a2a2afcdc28b55e69
